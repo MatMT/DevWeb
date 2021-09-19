@@ -27,3 +27,38 @@ body {
 .titulo span {
   font-size: 2rem;
 }
+
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.nav-bg {
+  background-color: var(--secundario);
+}
+
+.nav-principal {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .nav-principal {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.nav-principal a {
+  text-align: center;
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.nav-principal a:hover {
+  background-color: var(--primario);
+  color: var(--oscuro);
+}
