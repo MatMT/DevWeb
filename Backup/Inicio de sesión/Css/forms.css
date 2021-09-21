@@ -1,0 +1,249 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Century Gothic", "CenturyGothic", "AppleGothic", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.mega-div-container {
+  background: linear-gradient(37deg, #b436d5, #5d2aeb, #0b0f3e);
+  width: 100%;
+  height: 100%;
+  min-width: 1280px;
+  position: relative;
+  position: fixed;
+}
+
+.mega-div-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 1280px;
+  background-color: black;
+  opacity: 0.75;
+  position: fixed;
+}
+
+#background-imge-dreams {
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+}
+.mein-container {
+  width: 40%;
+  height: 100vh;
+  position: absolute;
+  top: 9%;
+  left: 30%;
+}
+
+#logo {
+  width: 40%;
+}
+
+.Introduction,
+.Logo {
+  text-align: center;
+  color: #fff;
+}
+
+.Introduction {
+  margin-top: 30px;
+}
+
+.Logo {
+  padding-bottom: 1%;
+  padding-top: 1%;
+  margin-top: 50px;
+}
+
+form {
+  color: #fff;
+  padding: 1em 1.5em 2.5em 2em;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+}
+
+label {
+  text-align: left;
+  font-weight: bolder;
+  font-size: 1em;
+}
+
+div .datos {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+}
+form input {
+  font-size: 12pt;
+}
+
+form .datos input {
+  margin-bottom: 2.5%;
+  margin-top: 2.5%;
+  font-size: 118%;
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  padding: 4%;
+  font-size: 11pt;
+  outline: none;
+}
+
+form #botones input {
+  font-weight: bolder;
+  font-size: 1.3rem;
+  padding: 0.5em 1.5em;
+  border: none;
+  margin-top: 3%;
+  margin-right: 10px;
+  border-radius: 50px;
+  color: #fff;
+  background-color: #fb7c64;
+}
+
+#botones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form #botones input:active {
+  transform: scale(0.9);
+}
+
+form .datos_button {
+  display: flex;
+  margin: 0 auto;
+  padding: 5%;
+}
+
+span,
+a.login {
+  font-size: 1.1em;
+  text-decoration: underline;
+  margin-top: 5%;
+  float: right;
+}
+
+a.login {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a.login:link {
+  color: #845feb;
+}
+
+a.login:active {
+  transform: scale(0.9);
+}
+
+a.login:visited {
+  color: #845feb;
+}
+
+.GenderType {
+  margin: 0 auto 0 auto;
+}
+
+.lost-pass {
+  color: #fffa;
+  padding-bottom: 1.5em;
+}
+
+.regist {
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+/*--------traductor---------------*/
+.google {
+  position: relative;
+  z-index: 500;
+  font-size: 0px;
+  border-radius: 36px;
+}
+
+.translated-ltr {
+  margin-top: -40px;
+}
+.translated-ltr {
+  margin-top: -40px;
+}
+.goog-te-banner-frame {
+  display: none;
+  margin-top: -20px;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-te-combo,
+.goog-te-ftab,
+.goog-te-menu,
+.goog-te-menu2,
+.goog-te-balloon {
+  background-color: transparent !important;
+  color: white;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif !important;
+  font-size: 1rem !important;
+}
+.back nav.sticky li .goog-te-combo {
+  color: black;
+}
+
+#google_translate_element_id option {
+  color: black;
+}
+
+
+/*---- ---- ----- ----- ----- --- ----- Respuestas ----- ----- --- ---- ---- */
+
+.respuesta{
+  width: 80%;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin: 25px auto 0px auto;
+  background-color: rgba(255, 255, 255, 0.493);
+  border-radius: 15px;
+
+}

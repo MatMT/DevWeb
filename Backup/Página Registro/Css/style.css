@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+:root {
+    --font-principal: "Josefin Sans", sans-serif;
+    --principal: rgb(0,0,0);
+    --secundario: rgba(101,180,194,0.972);
+    --texto:rgba(93, 103, 104, 0.801);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-principal);
+}
+
+.bg-principal{
+    background: var(--principal);
+}
+
+.bg-secundario{
+    background: var(--secundario);
+}
+
+.texto-texto{
+    color: var(--texto);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-2,.col-3, .col-4{
+    padding: 10px;
+}
+
+.col-2{
+    flex: 1 0 calc(50% - 10px);
+}
+
+.col-3{
+    flex: 1 0 calc(33.3% - 10px);
+}
+
+.col-4{
+    flex: 1 0 calc(25% - 10px)
+}
+
+.card{
+    width: 92%;
+    height: 92%;
+    border-radius: .5rem;
+    border: solid .5px var(--texto);
+}
+
+.logo{
+    font-size:30px;
+    color: var(--secundario);
+}
+
+.carga{
+    text-align: right;
+    font-size: 30px;
+}
+
+#files{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.card-header{
+    border-bottom:solid .5px var(--secundario) ;
+}
+.card-content{
+    height:50%;
+    display: flex;
+    align-items: center;
+}
+
+.card-image img{
+    width: 96%;
+    display: block;
+    margin: auto auto;
+}

@@ -1,0 +1,416 @@
+:root {
+  --our-font: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  --border-cont: 1px solid white;
+}
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 1200px;
+
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar{
+  width: 7px;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: #5d2aeb;
+  border-radius: 15px;
+}
+
+
+header {
+  background: rgb(84, 28, 249);
+  background: linear-gradient(
+    324deg,
+    rgba(84, 28, 249, 1) 10%,
+    rgba(255, 94, 60, 1) 95%
+  );
+  width: 100vw;
+  height: 100vh;
+}
+
+.back {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  background-color: rgba(0, 0, 0, 0.671);
+  width: 100vw;
+  height: 100vh;
+}
+.background-img-black {
+  position: absolute;
+  left: 0%;
+  top: 10vh;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.background-img-black img {
+  width: 135vh;
+  position: absolute;
+}
+
+@media screen and (max-height: 760px) {
+  .background-img-black {
+    margin-top: 20px;
+  }
+  .background-img-black img {
+    width: 90%;
+  }
+}
+
+.logo-contenedor {
+  width: 45vw;
+  height: 30vw;
+  position: relative;
+  padding-top: 4vh;
+}
+
+.logo-contenedor img {
+  width: 45vw;
+}
+
+.logo-contenedor button {
+  width: 60%;
+  height: 10%;
+  color: #7443ed;
+  background-color: white;
+  border-radius: 15px;
+  font-size: 1.5vw;
+  border: none;
+  font-weight: bold;
+
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.logo-contenedor button:hover {
+  transform: scale(1.05);
+  transform-origin: center;
+}
+
+@media screen and (max-height: 750px) {
+  .logo-contenedor img {
+    width: 40vw;
+  }
+}
+
+/*---  -----  ---- ---- Header---- ----- ------ --- ----- */
+
+nav {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+
+  padding: 25px 40px;
+}
+
+nav.sticky {
+  background-color: rgb(255, 255, 255);
+  padding: 15px 35px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.555);
+}
+
+nav img {
+  max-width: 200px;
+  width: 12%;
+  min-width: 130px;
+}
+
+.navigation {
+  position: relative;
+  display: flex;
+}
+
+.navigation li {
+  list-style: none;
+  margin-left: 30px;
+}
+
+.navigation li a {
+  text-decoration: none;
+  color: white;
+  font-size: var(--our-font);
+  font-weight: 500;
+  font-size: 1rem;
+  display: block;
+  padding: 5px;
+
+  position: relative;
+}
+
+.navigation li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  z-index: 1;
+
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform 0.6s ease-in-out;
+}
+
+.navigation li a:hover::before {
+  transform: scaleX(1);
+}
+
+.navigation[data-animation="left-rigth"] a::before {
+  transform-origin: right;
+  transition: transform 0.6s ease-in-out;
+}
+
+.navigation[data-animation="left-rigth"] a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+}
+
+/*- -------- ------------------------------------------ Animación
+
+
+/*Cambio de color de logo*/
+.back nav.sticky li a {
+  color: black;
+}
+
+#black-mod {
+  display: none;
+}
+
+.back nav.sticky #black-mod {
+  display: block;
+}
+
+.back nav.sticky #white-mod {
+  display: none;
+}
+
+.back nav.sticky .navigation li a::before {
+  background-color: black;
+}
+/*Section**/
+
+section {
+  width: 100%;
+  min-width: 600px;
+}
+
+.part-1 {
+  width: 100%;
+  min-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  padding: 5vh 5vh;
+}
+
+.text_1 {
+  width: 35%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.text_1 h2 {
+  font-size: 3vw;
+}
+
+.muestra {
+  width: 60%;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 20px 5px;
+}
+
+.muestra img {
+  width: 100%;
+}
+
+@media screen and (max-width: 832px) {
+  .text_1 {
+    width: 100%;
+    text-align: justify;
+  }
+
+  .text_1 h2 {
+    font-size: 4vw;
+  }
+
+  .muestra {
+    width: 80%;
+
+    margin: 20px auto;
+  }
+}
+
+/*---------- Parte 2 ---------------*/
+
+.parte-2 {
+  background-image: url(../imagenes/icono-d.svg),
+    url(../imagenes/auriculares.jpg);
+  background-size: 10%, cover;
+  background-repeat: no-repeat;
+  background-position: top 10px left 10px, 0px;
+  width: 100%;
+  height: 100vh;
+
+  position: relative;
+}
+
+.header-text2 {
+  width: 100%;
+  text-align: right;
+  padding: 15px 20px;
+  color: white;
+}
+
+.header-text2 a {
+  text-decoration: none;
+  color: white;
+}
+
+.title-big {
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  color: white;
+}
+
+.title-big h2 {
+  font-size: 5vw;
+}
+
+.title-big h1 {
+  font-size: 8vw;
+}
+
+.title-big h3 {
+  font-weight: normal;
+  font-size: 3.5vw;
+  text-align: right;
+  width: 80%;
+}
+/*------ Footer -----*/
+
+footer {
+  background-color: black;
+  height: 350px;
+  padding: 40px 50px;
+}
+
+footer img {
+  width: 200px;
+}
+
+.box-footer {
+  width: 100%;
+  display: flex;
+  margin-top: 5vh;
+}
+
+.box-footer h3 {
+  color: rgb(189, 189, 189);
+}
+
+.box-footer div {
+  width: 33%;
+  padding: 20px;
+}
+
+.box-footer:nth-child(-n + 2) div {
+  border-left: 1px solid rgb(189, 189, 189);
+}
+
+.box-footer h4 {
+  color: white;
+  margin-top: 20px;
+}
+
+.box-footer h4:hover {
+  color: #7443ed;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/*--------traductor---------------*/
+.google {
+  position: relative;
+  z-index: 500;
+  font-size: 0px;
+  border-radius: 36px;
+}
+
+.translated-ltr {
+  margin-top: -40px;
+}
+.translated-ltr {
+  margin-top: -40px;
+}
+.goog-te-banner-frame {
+  display: none;
+  margin-top: -20px;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-te-combo,
+.goog-te-ftab,
+.goog-te-menu,
+.goog-te-menu2,
+.goog-te-balloon {
+  background-color: transparent !important;
+  color: white;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif !important;
+  font-size: 1rem !important;
+}
+.back nav.sticky li .goog-te-combo {
+  color: black;
+}
+
+#google_translate_element_id option {
+  color: black;
+}

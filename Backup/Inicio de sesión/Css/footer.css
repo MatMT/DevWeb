@@ -1,0 +1,43 @@
+/*------ Footer -----*/
+
+footer {
+  width: 100%;
+  /*---*/
+  background-color: black;
+  height: 290px;
+  padding: 70px 50px;
+}
+
+footer img {
+  width: 180px;
+}
+
+.box-footer {
+  width: 100%;
+  display: flex;
+  margin-top: 2vh;
+}
+
+.box-footer h3 {
+  color: rgb(189, 189, 189);
+}
+
+.box-footer div {
+  width: 33%;
+  padding: 20px;
+}
+
+.box-footer:nth-child(-n + 2) div {
+  border-left: 1px solid rgb(189, 189, 189);
+}
+
+.box-footer h4 {
+  color: white;
+  margin-top: 20px;
+}
+
+.box-footer h4:hover {
+  color: #7443ed;
+  transition: 0.5s;
+  cursor: pointer;
+}
