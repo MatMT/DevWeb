@@ -1,0 +1,46 @@
+:root {
+  --black_mate: #0c0c0c;
+  --plateado: #676767;
+  --blanco: #eaeef0;
+
+  --celeste: #42abff;
+  --rosa: #ff4f8b;
+  --amarillo: #ffeb3b;
+
+  --font_prin: "Poppins", sans-serif;
+  --font_sec: "bromello", sans-serif;
+}
+
+body {
+  font-family: var(--font_prin);
+  background-color: var(--blanco);
+}
+
+/* -- Tarjeta -- */
+
+.card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  width: 20%;
+  background-color: var(--black_mate);
+  color: var(--blanco);
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 1),
+    8px 8px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+}
+
+.card--hover {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  width: 20%;
+  background-image: linear-gradient(
+    var(--celeste),
+    var(--rosa),
+    var(--amarillo)
+  );
+  animation: animate 1s linear infinite;
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 1),
+    8px 8px 25px rgba(0, 0, 0, 0.15);
+}
