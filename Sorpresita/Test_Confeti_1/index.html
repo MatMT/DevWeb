@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁</title>
+    <link href="http://fonts.cdnfonts.com/css/bromello" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/confeti.css">
+    <link rel="stylesheet" href="css/Stytle_test.css">
+</head>
+<body>
+
+    <div class="card middle">
+        <div class="front">
+            <h2>De: Mi</h2>
+            <h2>Para: Ti</h2>
+        </div> <!-- .card__front -->
+        <div class="back">
+            <div class="bakc__content middle">
+                <h1>¡Feliz Cumpleaños!</h1>
+                <div class="card__header">
+                    <img class="foto" src="Assets/preview.jpg" alt="Your photo">
+                </div>
+                <div class="card__content">
+                    <h2>Nicole López</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi obcaecati reprehenderit ducimus debitis distinctio, tempore saepe quos.</p>
+                </div>
+            </div>
+        </div> <!-- .card__back -->
+    </div>
+
+    <div class="box" id="box"></div> 
+    
+    <!-- <input type="button" onclick="confettiFalling()" value="Boton" class="boton"> -->
+
+    <script>
+    function confettiFalling() {
+
+    var box = document.getElementById("box");
+    var colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange', 'pink'];
+
+    for (var i = 0; i < 1000; i++) {
+        
+        // Create 1000 DIV elements for confetti
+        var div = document.createElement("div");
+        div.classList.add("confetti");
+        box.appendChild(div);
+    }
+
+    var confetti = document.querySelectorAll('.confetti');
+
+    for (var i = 0; i < confetti.length; i++) {
+        
+        var size = Math.random() * 0.01 * [i];
+
+        confetti[i].style.width = 5 + size + 'px';
+        confetti[i].style.height = 16 + size + 'px';
+        confetti[i].style.left = Math.random() * innerWidth + 'px';
+
+        var background = colors[Math.floor(Math.random() * colors.length)];
+        confetti[i].style.backgroundColor = background;
+
+        box.children[i].style.transform = "rotate("+ size*[i] +"deg)";
+    }
+    }
+
+    function eliminar() {
+    document.getElementById("box").classList.remove("box");
+    console.log("Si funciona");
+    }
+
+    confettiFalling();
+    window.setTimeout(eliminar,13000);
+    </script>
+</body>
+</html>

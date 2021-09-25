@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kristi", cursive;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.main_header {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(0, 0%, 94%);
+  display: grid;
+  place-items: center;
+}
+
+.center_div {
+  min-width: 50vw;
+  height: 40vh;
+  color: #000;
+  text-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+  font-size: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 35%;
+  }
+}
