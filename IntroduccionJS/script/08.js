@@ -6,8 +6,7 @@ const email = "correo@correo.com";
 // Forma antigua de concatenar
 console.log("Nombre cliente: " + nombre + " Correo: " + email);
 // Forma poco común pero actual de concatenar
-console.log("Nombre cliente: ", nombre, " Correo: ", email);
+console.log("Nombre cliente:", nombre, "Correo:", email);
 
-// --- Template Strings | String Literals ---
-
-console.log(``);
+// --- Template Strings | String Literals --- Forma actal
+console.log(`Nombre cliente: ${nombre} Correo: ${email}`);
