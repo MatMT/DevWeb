@@ -18,4 +18,3 @@ const { precio, nombreProducto } = producto; // Se crea la variable y se extrae 
 
 console.log(precio);
 console.log(nombreProducto);
-s;
