@@ -1,0 +1,9 @@
+@include tablet {
+    .contenido-anuncios{
+        @include grid(3, 2rem);
+    }
+}
+
+.anuncio {
+    
+}

@@ -1,0 +1,27 @@
+.footer {
+    padding: calc($separacion/2) 0;
+    background-color: $grisOscuro;
+    margin-bottom: 0;
+
+    .contenedor-footer {
+        padding-top: calc($separacion/2);
+    }
+
+    .navegacion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @include tablet {
+        .navegacion {
+            flex-direction: row;
+        }
+    }
+
+    .copyright {
+        color: $blanco;
+        text-align: center;
+    }
+}

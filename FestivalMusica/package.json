@@ -1,0 +1,41 @@
+{
+  "name": "festivalmusica",
+  "version": "1.0.0",
+  "description": "Proyecto con Gulp, Sass y Html",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatMT/DevWeb.git"
+  },
+  "keywords": [
+    "SASS",
+    "GULP"
+  ],
+  "author": "Mateo Elias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatMT/DevWeb/issues"
+  },
+  "homepage": "https://github.com/MatMT/DevWeb#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.0.17",
+    "gulp": "^3.9.1",
+    "gulp-avif": "^1.0.1",
+    "gulp-cache": "^1.1.3",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-webp": "^4.0.0",
+    "postcss": "^8.4.6",
+    "sass": "^1.45.0"
+  },
+  "dependencies": {
+    "gulp-terser-js": "^5.2.2"
+  }
+}
