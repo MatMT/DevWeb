@@ -1,0 +1,44 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+#menu{
+  background-color: transparent !important;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+#text{
+  color: white;
+}
+
+#text-active{
+  color: #fcc50a;
+  border-bottom: 2px solid #fcc50a;
+}
+
+#text:hover{
+  color: #f3cf58;
+}
+
+@media (min-width: 992px){
+  #offcanvasNavbar{
+    background-color: transparent !important;
+  } 
+}
+#offcanvasNavbar{
+  background-color: #002756;
+}
+#bot{
+  border: none;
+  box-shadow: none;
+}
+#h5{
+  color: white;
+}
+#ham{
+  background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(240,240,240, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>") !important;
+}

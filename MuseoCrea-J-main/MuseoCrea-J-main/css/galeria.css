@@ -1,0 +1,279 @@
+@font-face {
+    font-family: cocon;
+    src: url(../css/Cocon-Regular-Font.otf);
+    }
+  .portafolio{
+      background: #000642;
+      width: 100%;
+      min-height: 100vh;
+  }
+  .portafolio h1{
+    text-align: center;
+    padding: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: #bead11;
+  }
+  
+  .galeria-port{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+  }
+  
+  .imagen-port{
+      width: 261px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+      box-sizing: border-box;
+  }
+  
+  .imagen-port  img{
+      width: 200px;
+      height: 300px; 
+      border: 7px solid #fff;
+      box-sizing: border-box;
+      
+  
+     box-sizing: border-box;
+     object-fit: cover;
+    transition: 0.5s;
+  }
+  
+  .hover-galeria{
+      position: absolute;
+      width: 261px;
+      height: 295px;
+      top: 0;
+      transform: scale(0);
+      background: rgba(0, 0, 0, 0.555);
+      transition: transform .5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  
+  .hover-galeria a > img{
+      width: 150px;
+      height: 180px;
+      padding: 10px;
+      box-sizing: border-box;
+      border: none;
+  }
+  .hover-galeria a:hover{
+      background-color: transparent;
+  
+  }
+  
+  .hover-galeria p{
+      color: #ffc600;
+      font-size: 20px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-style: italic;
+  }
+  
+  .imagen-port:hover .hover-galeria{
+      transform: scale(1);
+  }
+  /* estilos de galeria*/
+  .galeria{
+      width: 90%;
+      margin: auto;
+      list-style: none;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .galeria li{
+     margin: 5px;
+    }
+    .galeria img{
+     width: 250px;
+     height: 280px;
+    }
+    /*estilos de modal*/
+    .modal{
+        display: none;
+    }
+    .modal:target{
+      display: block;
+      position: fixed;
+      background: rgba(0, 0, 0, 0.8);
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    .modal h3{
+     color: #fff;
+     font-size: 30px;
+     text-align: center;
+     margin: 15px 0;
+    }
+    .imagen{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .imagen a{
+      color: #fff;
+      font-size: 40px;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .imagen a:nth-child(2){
+      margin: 0;
+      height: 100%;
+      flex-shrink: 2;
+    }
+    .imagen a:hover{
+      text-decoration: none;
+      background: transparent;
+      
+    }
+    .imagen img{
+      width: 800px;
+      height: 450px; 
+      min-width: 300px;
+      border: 7px solid #fff;
+      box-sizing: border-box;
+      object-fit: fill;
+    }
+  
+    .cerrar{
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: 15px auto;
+      text-decoration: none;
+      text-align: center;
+      padding: 0px;
+      line-height: 25px;
+    }
+    .cerrar:hover{
+        background: transparent;
+    }
+    .modal i{
+        font-size: 50px;
+        color:#fff;
+    }
+    .modal i:hover{
+      color: #03738C;
+      transition: 0.5s;
+    }
+  
+    /*Media Queries*/
+    @media only screen and (max-width: 1024px) {
+      .imagen img{
+          min-width: 200px;
+          border: 7px solid #fff;
+          box-sizing: border-box;
+          object-fit: fill;
+        }
+    }
+    @media only screen and (max-width: 900px) {
+      .imagen img{
+          width: 100%;
+          height: 100%; 
+          box-sizing: border-box;
+          object-fit: cover;
+        }
+    }
+    @media only screen and (max-width: 500px) {
+      
+        .modal i{
+          font-size: 30px;
+      }
+    }
+    @media only screen and (max-width: 375px) {
+      .imagen img{
+          width: 100%;
+          height: 300px; 
+          min-width: 250px;
+          object-fit: cover;
+        }
+    }
+    @media only screen and (max-width: 280px) {
+      
+        .imagen a{
+          font-size: 30px;
+        }
+        .modal i{
+          font-size: 25px;
+      }
+        
+  
+      
+    }
+    @media screen and (max-width: 697px){
+      
+      .textos h1, h3{
+          font-family: cocon;
+          overflow-y: hidden;
+          
+      }
+      header .titulo{
+          font-size: 4em;
+      }
+      .subtitulo{
+          font-size:3em;
+          font-weight: 10;
+      }
+  
+  
+  
+  }
+  
+  @media screen and (max-width: 395px){
+      
+      .textos h1, h3{
+          font-family: cocon;
+          overflow-y: hidden;
+          
+      }
+      header .titulo{
+          font-size: 3em;
+      }
+      .subtitulo{
+          font-size:2em;
+          font-weight: 10;
+      }
+  
+  
+  
+  }
+  
+  @media screen and (max-width: 318px){
+      
+      .textos h1, h3{
+          font-family: cocon;
+          overflow-y: hidden;
+          
+      }
+      header .titulo{
+          font-size: 4em;
+      }
+      .subtitulo{
+          font-size:3em;
+          font-weight: 10;
+      }
+  
+  
+  
+  }
+  
+  @media only screen and (max-width: 320px) {
+  
+      .title-container h1{
+          font-size: 25px;
+      }
+  
+  }
+  
