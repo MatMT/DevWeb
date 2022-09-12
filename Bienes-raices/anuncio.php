@@ -1,9 +1,7 @@
 <?php
-require 'includes/funciones.php';
-incluirTemplate('header');
+require 'includes/app.php';
 
 // Importar la base de datos
-require 'includes/config/database.php';
 $db = conectarDB();
 
 // Obtener id de la venta
@@ -27,6 +25,7 @@ if (!$exist) {
 }
 
 $propiedad = mysqli_fetch_assoc($resultado);
+incluirTemplate('header');
 
 ?>
 
