@@ -39,9 +39,9 @@ $auth = $_SESSION['login'] ?? null;
                         <a href="../../blog.php">Blog</a>
                         <a href="../../contacto.php">Contacto</a>
                         <?php if ($auth) : ?>
-                            <a href="../../cerrar-sesion.php">Cerrar Sesión</a>;
+                            <a href="../../cerrar-sesion.php">Cerrar Sesión</a>
                         <?php else : ?>
-                            <a href="../../login.php">Iniciar Sesión</a>;
+                            <a href="../../login.php">Iniciar Sesión</a>
                         <?php endif ?>
                     </nav>
                 </div>

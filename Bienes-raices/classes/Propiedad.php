@@ -39,7 +39,7 @@ class Propiedad
         $this->imagen = $args['imagen'] ?? '';
         $this->estacionamiento = $args['estacionamiento'] ?? '';
         $this->creado = date('Y/m/d');
-        $this->vendedorId = $args['vendedorId'] ?? '';
+        $this->vendedorId = $args['vendedorId'] ?? 1;
     }
 
     public function guardar()
@@ -131,5 +131,66 @@ class Propiedad
         }
 
         return self::$errores;
+    }
+
+    // Lista todas las propiedades
+    public static function all()
+    {
+        $query = "SELECT * FROM propiedades";
+
+        $resultado = self::consultarSQL($query);
+
+        return $resultado;
+    }
+
+    // Busca el registro por su id
+    public static function find($id)
+    {
+        $query = "SELECT * FROM propiedades WHERE id = ${id}";
+
+        $resultado = self::consultarSQL($query);
+        return array_shift($resultado);
+    }
+
+    public static function consultarSQL($query)
+    {
+        // Consultar la base de datos
+        $resultado = self::$db->query($query);
+
+        // Iterar los resultados
+        $array = [];
+        while ($registro = $resultado->fetch_assoc()) {
+            $array[] = self::crearObj($registro);
+        }
+
+        // Liberar la memoria
+        $resultado->free();
+
+        // Retornar
+        return $array;
+    }
+
+    public static function crearObj($registro)
+    {
+        // Crear objetos de la clase Padre actual
+        $objeto = new self;
+
+        foreach ($registro as $key => $value) {
+            if (property_exists($objeto, $key)) {
+                $objeto->$key = $value;
+            }
+        }
+
+        return $objeto;
+    }
+
+    // Sincronizar el objeto en memoria con los cambios realizados por el usuario
+    public function sincro($args = [])
+    {
+        foreach ($args as $key => $value) {
+            if (property_exists($this, $key) && !is_null($value)) {
+                $this->$key = $value;
+            }
+        }
     }
 }
