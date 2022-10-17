@@ -1,0 +1,388 @@
+:root {
+  --black_mate: #0c0c0c;
+  --plateado: #676767;
+  --blanco: #ececec;
+
+  --rosa: #ff71ab;
+  --amarillo: #f7d928;
+
+  /* Paleta de colores propia */
+  --azul: #02a7cc;
+  --rosado: #da0864;
+  --morado: #cf6bfa;
+  /*  */
+  --rosa1: #e16372;
+  --cian: #08c5ef;
+
+  /* Tamaño de la tarjeta */
+  --largo: 35rem;
+  --alto: 53rem;
+
+  /* Fuentes de letra */
+
+  --font_prin: "Poppins", sans-serif;
+  --font_sec: "Sacramento", cursive;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  text-decoration: none;
+  box-sizing: inherit;
+}
+
+/* --- Gobales --- */
+body {
+  height: 100vh;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-family: var(--font_prin);
+  background-color: var(--blanco);
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3.4rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+p {
+  overflow-y: auto;
+  padding: 0rem 2.5rem 1rem;
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.d_none {
+  display: none !important;
+  z-index: 1;
+}
+
+/* -- Open Screen -- */
+
+.target_open {
+  position: absolute;
+  width: 30%;
+  min-width: 22.6rem;
+  height: auto;
+  border-radius: 3rem;
+  z-index: 500;
+  background-color: var(--blanco);
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.41);
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1366px) {
+  .target_open {
+    width: 56rem;
+    padding: 1rem;
+  }
+}
+
+.target__text,
+.target__buttom {
+  flex-basis: calc(50% - 1rem);
+}
+
+.target__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+}
+
+.detalle {
+  font-size: 7.5rem;
+  color: var(--cian);
+  font-family: var(--font_sec);
+}
+
+.target__buttom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 0rem;
+  margin-top: -4rem;
+}
+
+@media (min-width: 1366px) {
+  .target__buttom {
+    margin-top: 0;
+  }
+}
+
+.text_target {
+  padding: 0;
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.target__buttom p {
+  padding: 0;
+}
+
+.text_target2 {
+  color: #676767;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.boton {
+  cursor: pointer;
+  height: 4rem;
+  width: 80%;
+  font-family: var(--font_prin);
+  font-size: 2rem;
+  font-weight: 1.8rem;
+  color: var(--blanco);
+  background-color: var(--cian);
+  border: 0;
+  border-radius: 1.8rem;
+  z-index: 400;
+}
+
+/* División de pantalla */
+
+.ldoor,
+.rdoor {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  z-index: 300;
+  background-color: var(--amarillo);
+}
+
+.ldoor {
+  left: 0;
+  border-right: 4rem solid var(--cian);
+}
+
+.rdoor {
+  right: 0;
+  border-left: 4rem solid var(--cian);
+}
+
+/* -- Ejecución de animación -- */
+
+.ldoor__animation {
+  animation: ldoor 4s 1;
+}
+
+.rdoor__animation {
+  animation: rdoor 4s 1;
+}
+
+@keyframes ldoor {
+  from {
+    left: 0;
+  }
+  to {
+    left: -50%;
+  }
+}
+
+@keyframes rdoor {
+  from {
+    right: 0;
+  }
+  to {
+    right: -50%;
+  }
+}
+
+/* Fondo */
+
+.imagen1 {
+  background-image: url(../Assets/Wallpaper_icons.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.imagen_multiple
+
+/* -- Tarjeta -- */
+
+.card {
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  overflow-wrap: break-word;
+  border-radius: 0.8rem;
+  width: var(--largo);
+  height: var(--alto);
+  z-index: 50;
+}
+
+@media (min-height: 649px) {
+  .card {
+    border-radius: 1rem;
+    width: calc(var(--largo) * 1.2);
+    height: calc(var(--alto) * 1.2);
+  }
+}
+
+@media (max-height: 1366px) {
+  .card {
+    border-radius: 1rem;
+    width: calc(var(--largo) * 1.1);
+    height: calc(var(--alto) * 1.1);
+  }
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform 0.5s linear;
+  border-radius: 0.8rem;
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 1),
+    8px 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* -- Giro de tarjeta -- */
+
+.front {
+  background-image: url(../Assets/Wallpaper.png);
+  background-size: cover;
+  color: var(--blanco);
+  font-size: 3rem;
+  font-family: var(--font_sec);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: perspective(1600px) rotateY(0deg);
+}
+
+.back {
+  background-color: var(--blanco);
+  transform: perspective(1600px) rotateY(180deg);
+}
+
+/* -- Tarjeta frontal -- */
+
+.front h2 {
+  font-family: var(--font_prin);
+  font-size: 6rem;
+  text-shadow: 0.1rem 0.2rem 0.6rem var(--mora);
+}
+
+/* -- Tarjeta trasera -- */
+
+.bakc__content {
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.card__header {
+  margin: 0 auto;
+  display: block;
+  width: 60%;
+}
+
+@media (min-height: 649px) {
+  .bakc__content {
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .back h1 {
+    font-size: calc(3rem * 1.2);
+  }
+
+  .back h2 {
+    font-size: calc(2.6rem * 1.3);
+  }
+
+  .card__content {
+    padding: calc(1.5rem * 1.2);
+  }
+}
+
+@media (max-height: 1366px) {
+  .bakc__content {
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .back h1 {
+    margin-top: 1rem;
+    font-size: calc(3.6rem * 1);
+  }
+
+  .back h2 {
+    font-size: calc(2.6rem * 1);
+  }
+
+  .card__content {
+    padding: calc(1rem * 1);
+  }
+}
+
+.bakc__content h1 {
+  color: var(--cian);
+  text-shadow: 0.1rem 0.2rem 0.1rem var(--azul);
+}
+
+.card__content h2 {
+  color: var(--cian);
+  text-shadow: 0.1rem 0.1rem var(--azul);
+}
+
+/* -- Tarjeta -- */
+
+.card:hover > .front {
+  transform: perspective(1600px) rotateY(-180deg);
+}
+
+.card:hover > .back {
+  transform: perspective(1600px) rotateY(0deg);
+}
