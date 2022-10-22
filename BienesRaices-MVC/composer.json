@@ -1,0 +1,19 @@
+{
+  "name": "mateo-elias/bienes-raices",
+  "description": "Creando proyecto con POO",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "App\\": "./classes"
+    }
+  },
+  "authors": [
+    {
+      "name": "MatMT",
+      "email": "oscarmateoelias@gmail.com"
+    }
+  ],
+  "require": {
+    "intervention/image": "^2.7"
+  }
+}
