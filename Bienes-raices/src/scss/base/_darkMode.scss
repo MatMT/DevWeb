@@ -9,6 +9,14 @@
         color: $gris;
     }
 
+    table.propiedades {
+        tbody {
+            td {
+                color: $blanco;
+            }
+        }
+    }
+
     .anuncio, .resumen-propiedad {
         background-color: $grisOscuro;
         border: 1px solid $grisOscuro;
