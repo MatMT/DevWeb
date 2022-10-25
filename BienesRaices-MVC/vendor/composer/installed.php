@@ -3,7 +3,7 @@
         'name' => 'mateo-elias/bienes-raices',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '23a852ec206c73401da2c487caf3166c9d5faa90',
+        'reference' => '92a24707da3e436267887e683b1e5e729d8ee098',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'mateo-elias/bienes-raices' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '23a852ec206c73401da2c487caf3166c9d5faa90',
+            'reference' => '92a24707da3e436267887e683b1e5e729d8ee098',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

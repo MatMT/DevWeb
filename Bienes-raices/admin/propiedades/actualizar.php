@@ -11,6 +11,10 @@ estaAutenticado();
 $id = $_GET['id'] ?? null;
 $id = filter_var($id, FILTER_VALIDATE_INT);
 
+if (!$id) {
+    header('Location: /admin');
+}
+
 // Obtener los datos de la propiedad
 $propiedad = Propiedad::find($id);
 
