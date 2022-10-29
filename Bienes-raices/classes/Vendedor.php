@@ -34,7 +34,7 @@ class Vendedor extends ActiveRecord
 
         // Valida una expresión regular, un "patrón"
         // Extensión fija de 8 digitos
-        if (!preg_match('/[0-9]{8}/', $this->telefono)) {
+        if (!preg_match('/[0-9]{8}/', $this->telefono) or strlen($this->telefono) > 8) {
             self::$errores[] = 'Formato no válido';
         }
 
