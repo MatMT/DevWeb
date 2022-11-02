@@ -1,0 +1,19 @@
+{
+  "name": "mat-elias/app-salon-php-mcv-js-sass",
+  "description": "Proyecto PHP 8, MVC, SQL, SASS, Gulp",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "MVC\\": "./",
+      "Controllers\\": "./controllers",
+      "Model\\": "./models"
+    }
+  },
+  "authors": [
+    {
+      "name": "MatMT",
+      "email": "oscarmateoelias@gmail.com"
+    }
+  ],
+  "require": {}
+}
