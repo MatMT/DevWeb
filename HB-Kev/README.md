@@ -1,2 +1,2 @@
 # HB
- Tarjeta de felicitación - 29/9
+ Tarjeta de felicitación
