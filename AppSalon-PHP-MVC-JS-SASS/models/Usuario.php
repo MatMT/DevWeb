@@ -65,6 +65,39 @@ class Usuario extends ActiveRecord
         return self::$alertas;
     }
 
+    public function validarLogin()
+    {
+        if (!$this->email) {
+            self::$alertas['error'][] = 'El email es Obligatorio';
+        }
+        if (!$this->password) {
+            self::$alertas['error'][] = 'El password es Obligatorio';
+        }
+
+        return self::$alertas;
+    }
+
+    public function validarEmail()
+    {
+        if (!$this->email) {
+            self::$alertas['error'][] = 'El email es Obligatorio';
+        }
+
+        return self::$alertas;
+    }
+
+    public function validarPassword()
+    {
+        if (!$this->password) {
+            self::$alertas['error'][] = 'El Password es Obligatorio';
+        }
+        if (strlen($this->password) < 6) {
+            self::$alertas['error'][] = 'El Password debe contener al menos 6 caracteres';
+        }
+
+        return self::$alertas;
+    }
+
     // Revisa si el usuario ya existe
     public function existeUsuario()
     {
@@ -92,5 +125,16 @@ class Usuario extends ActiveRecord
     {
         // Retorna una combinación de 13 digitos 
         $this->token = uniqid();
+    }
+
+    public function ComprobarPassAndVerificado($password)
+    {
+        $resultado = password_verify($password, $this->password);
+
+        if (!$this->confirmado || !$resultado) {
+            self::$alertas['error'][] = 'Password Incorrecto o cuenta aún no verificada';
+        } else {
+            return true;
+        }
     }
 }
