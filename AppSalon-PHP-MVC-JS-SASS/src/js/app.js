@@ -23,6 +23,12 @@ function iniciarApp() {
     paginaAnterior();
 
     consultarAPI(); // Consulta la API en el backend de PHP
+
+    nombreCliente(); // Añade el nombre del cliente al objeto de cita
+    seleccionarFecha(); // Añade la fecha de la cita en el objeto
+    seleccionarHora(); // Añade la hora de la cita en el objeto
+
+    mostrarResumen(); // Muestra el resumen de la cita
 }
 
 function mostrarSeccion() {
@@ -55,6 +61,10 @@ function tabs() {
             paso = parseInt(e.target.dataset.paso);
             mostrarSeccion();
             botonesPaginador()
+
+            if (paso === 3) {
+                mostrarResumen();
+            }
         });
     });
 }
@@ -143,13 +153,136 @@ function seleccionarServicio(servicio) {
     const { id } = servicio;
     const { servicios } = cita;
 
-    // Comprobar si un servicio ya fue agregado
-
-    // Tomamos una copia de servicios y agregamos un nuevo servicio
-    cita.servicios = [...servicios, servicio];
-
+    // Identificar el elemtno al que se le da click
     const divServicio = document.querySelector(`[data-id-servicio="${id}"]`);
-    divServicio.classList.add('seleccionado');
 
-    console.log(servicio);
+    // Comprobar si un servicio ya fue agregado con array method, si ya existe en el
+    if (servicios.some(agregado => agregado.id === id)) {
+        // Eliminarlo
+        cita.servicios = servicios.filter(agregado => agregado.id !== id);
+        divServicio.classList.remove('seleccionado');
+    } else {
+        // Agregarlo
+        // Tomamos una copia de servicios y agregamos un nuevo servicio
+        cita.servicios = [...servicios, servicio];
+        divServicio.classList.add('seleccionado');
+    }
+
+    console.log(cita);
+}
+
+function nombreCliente() {
+    cita.nombre = document.querySelector('#nombre').value;
+}
+
+function seleccionarFecha() {
+    const inputFecha = document.querySelector('#fecha');
+    inputFecha.addEventListener('input', function (e) {
+
+        // Conocer el número de día de la semana
+        const dia = new Date(e.target.value).getUTCDay();
+
+        // Condicional de fin de semana
+        if ([6, 0].includes(dia)) {
+            e.target.value = '';
+            cita.fecha = '';
+            mostrarAlerta('Fines de semana cerrado', 'error', '.formulario');
+        } else {
+            cita.fecha = e.target.value;
+        }
+    });
+}
+
+
+function seleccionarHora() {
+    const inputHora = document.querySelector('#hora');
+    inputHora.addEventListener('input', function (e) {
+        const horaCita = e.target.value;
+
+        // Separamos el string
+        const hora = horaCita.split(":")[0];
+
+        if (hora < 10 || hora > 18) {
+            e.target.value = '';
+            cita.hora = '';
+            mostrarAlerta('Hora no válida', 'error', '.formulario');
+        } else {
+            cita.hora = e.target.value;
+        }
+    });
+}
+
+function mostrarAlerta(mensaje, tipo, elemento, desaparece = true) {
+
+    // Previene que se genere más de 1 alerta
+    const alertaPrevia = document.querySelector('.alerta');
+    if (alertaPrevia) {
+        alertaPrevia.remove();
+    }
+
+    // Scripting para crear la alerta
+    const alerta = document.createElement('DIV');
+    alerta.textContent = mensaje;
+    alerta.classList.add('alerta');
+    alerta.classList.add(tipo);
+
+    const referencia = document.querySelector(elemento);
+    referencia.appendChild(alerta);
+
+    if (desaparece) {
+        // Eliminar la alerta
+        setTimeout(() => {
+            alerta.remove();
+        }, 4500);
+    }
+}
+
+function mostrarResumen() {
+    const resumen = document.querySelector('.contenido-resumen');
+
+    // Limpiar el Contendio e Resumen
+    while (resumen.firstChild) {
+        resumen.removeChild(resumen.firstChild);
+    }
+
+    // Condicional de objeto aún vacio
+    if (Object.values(cita).includes('') || cita.servicios.length === 0) {
+        mostrarAlerta('Faltan datos de Servicios, Fecha u Hora', 'error', '.contenido-resumen', false);
+
+        return;
+    }
+
+    // Formatear el Div de Resumen
+    const { nombre, fecha, hora, servicios } = cita;
+
+    const nombreCliente = document.createElement('P');
+    nombreCliente.innerHTML = `<span>Nombre: </span> ${nombre}`;
+
+    const fechaCita = document.createElement('P');
+    fechaCita.innerHTML = `<span>Fecha: </span> ${fecha}`;
+
+    const horaCita = document.createElement('P');
+    horaCita.innerHTML = `<span>Hora: </span> ${hora}`;
+
+    servicios.forEach(servicio => {
+        const { id, precio, nombre } = servicio;
+
+        const contenedorServicio = document.createElement('DIV');
+        contenedorServicio.classList.add('contenedor-servicio');
+
+        const textoServicio = document.createElement('P');
+        textoServicio.textContent = nombre;
+
+        const precioServicio = document.createElement('P');
+        precioServicio.innerHTML = `<span>Precio: </span> $${precio}`;
+
+        contenedorServicio.appendChild(textoServicio);
+        contenedorServicio.appendChild(precioServicio);
+
+        resumen.appendChild(contenedorServicio);
+    })
+
+    resumen.appendChild(nombreCliente);
+    resumen.appendChild(fechaCita);
+    resumen.appendChild(horaCita);
 }
