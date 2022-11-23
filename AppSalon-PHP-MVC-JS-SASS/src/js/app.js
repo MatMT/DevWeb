@@ -61,10 +61,6 @@ function tabs() {
             paso = parseInt(e.target.dataset.paso);
             mostrarSeccion();
             botonesPaginador()
-
-            if (paso === 3) {
-                mostrarResumen();
-            }
         });
     });
 }
@@ -79,6 +75,7 @@ function botonesPaginador() {
     } else if (paso === 3) {
         paginaAnterior.classList.remove('ocultar');
         paginaSiguiente.classList.add('ocultar');
+        mostrarResumen();
     } else {
         paginaAnterior.classList.remove('ocultar');
         paginaSiguiente.classList.remove('ocultar');
@@ -248,22 +245,18 @@ function mostrarResumen() {
     // Condicional de objeto aún vacio
     if (Object.values(cita).includes('') || cita.servicios.length === 0) {
         mostrarAlerta('Faltan datos de Servicios, Fecha u Hora', 'error', '.contenido-resumen', false);
-
         return;
     }
 
     // Formatear el Div de Resumen
     const { nombre, fecha, hora, servicios } = cita;
 
-    const nombreCliente = document.createElement('P');
-    nombreCliente.innerHTML = `<span>Nombre: </span> ${nombre}`;
+    // Heading para Servicios en Resumen 
+    const headingServicios = document.createElement('H3');
+    headingServicios.textContent = 'Resumen de Servicios';
+    resumen.appendChild(headingServicios);
 
-    const fechaCita = document.createElement('P');
-    fechaCita.innerHTML = `<span>Fecha: </span> ${fecha}`;
-
-    const horaCita = document.createElement('P');
-    horaCita.innerHTML = `<span>Hora: </span> ${hora}`;
-
+    // Iterando y mostrando los servicios
     servicios.forEach(servicio => {
         const { id, precio, nombre } = servicio;
 
@@ -280,9 +273,46 @@ function mostrarResumen() {
         contenedorServicio.appendChild(precioServicio);
 
         resumen.appendChild(contenedorServicio);
-    })
+    });
+
+    // Heading para Cita en Resumen 
+    const headingCita = document.createElement('H3');
+    headingCita.textContent = 'Resumen de Cita';
+    resumen.appendChild(headingCita);
+
+    const nombreCliente = document.createElement('P');
+    nombreCliente.innerHTML = `<span>Nombre: </span> ${nombre}`;
+
+    // Formatear la fecha en español
+    const fechaObj = new Date(fecha);
+    const mes = fechaObj.getMonth();
+    const dia = fechaObj.getDate() + 2;
+    const year = fechaObj.getFullYear();
+
+    const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const fechaUTC = new Date(Date.UTC(year, mes, dia));
+    const fechaFormateada = fechaUTC.toLocaleDateString('es-MX', opciones);
+
+
+    const fechaCita = document.createElement('P');
+    fechaCita.innerHTML = `<span>Fecha: </span> ${fechaFormateada}`;
+
+    const horaCita = document.createElement('P');
+    horaCita.innerHTML = `<span>Hora: </span> ${hora} Horas`;
+
+    // Boton para Crear una cita
+    const botonReservar = document.createElement('BUTTON');
+    botonReservar.classList.add('boton');
+    botonReservar.textContent = 'Reservar Cita';
+    botonReservar.onclick = reservarCita;
 
     resumen.appendChild(nombreCliente);
     resumen.appendChild(fechaCita);
     resumen.appendChild(horaCita);
+
+    resumen.appendChild(botonReservar);
+}
+
+function reservarCita() {
+    console.log('Reservando cita...');
 }
