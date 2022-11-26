@@ -30,3 +30,18 @@ function isAuth(): void
         header('Location: /');
     }
 }
+
+function isAdmin(): void
+{
+    if (!isset($_SESSION['admin'])) {
+        header('Location: /');
+    }
+}
+
+// Iniciar sesion
+function iniciarSesion(): void
+{
+    if (!isset($_SESSION)) {
+        session_start();
+    };
+}

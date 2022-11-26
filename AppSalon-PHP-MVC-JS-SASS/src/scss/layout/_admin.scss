@@ -20,3 +20,15 @@
     }
   }
 }
+
+.servicios {
+  @extend .citas;
+
+  .acciones {
+    margin: 0;
+    .boton,
+    .bto-eliminar {
+      margin: 0;
+    }
+  }
+}
