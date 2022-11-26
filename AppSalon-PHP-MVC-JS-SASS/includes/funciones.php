@@ -15,6 +15,14 @@ function s($html): string
     return $s;
 }
 
+function Last(string $actual, string $proximo): bool
+{
+    if ($actual !== $proximo) {
+        return true;
+    }
+    return false;
+}
+
 // Usuario autenticado
 function isAuth(): void
 {

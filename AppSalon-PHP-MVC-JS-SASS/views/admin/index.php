@@ -10,17 +10,24 @@ include_once __DIR__ . '/../templates/barra.php';
     <form action="" class="formulario">
         <div class="campo">
             <label for="fecha">Fecha</label>
-            <input type="date" id="fecha" name="fecha" />
+            <input type="date" id="fecha" name="fecha" value="<?php echo $fecha; ?>" />
         </div>
     </form>
 </div>
+
+<?php
+if (count($citas) === 0) {
+    echo "<h2>No Hay Citas para esta Fecha</h2>";
+}
+?>
 
 <div class="citas-admin">
     <ul class="citas">
         <?php
         $idCita = '';
-        foreach ($citas as $cita) {
+        foreach ($citas as $key => $cita) {
             if ($idCita !== $cita->id) {
+                $total = 0;
         ?>
                 <li>
                     <p>ID: <span><?php echo $cita->id ?></span></p>
@@ -33,12 +40,30 @@ include_once __DIR__ . '/../templates/barra.php';
                 <?php
                 $idCita = $cita->id;
             } // Fin de if                 
+            $total += $cita->precio;
                 ?>
+
                 <p class="servicio">
                     <?php echo $cita->servicio . " $" . $cita->precio; ?>
                 </p>
-            <?php
-        } // Fin de foreach 
+
+                <?php
+                $actual = $cita->id;
+                $proximo = $citas[$key + 1]->id ?? 0;
+
+                if (Last($actual, $proximo)) { ?>
+                    <p class="total">Total: <span> <?php echo '$' . $total; ?></span></p>
+
+                    <form action="/api/eliminar" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $cita->id; ?>">
+                        <input type="submit" class="boton-eliminar" value="Eliminar">
+                    </form>
+            <?php }
+            } // Fin de foreach 
             ?>
     </ul>
 </div>
+
+<?php
+$script = "<script src='build/js/buscador.js'></script>"
+?>
