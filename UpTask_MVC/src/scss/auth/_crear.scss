@@ -1,0 +1,24 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.crear {
+  margin-top: 5rem;
+  .uptask {
+    @include m.textoDegradado(v.$morado);
+  }
+
+  .submit {
+    display: flex;
+    justify-content: flex-end;
+
+    input[type="submit"] {
+      @include m.boton(v.$morado, v.$blanco);
+    }
+  }
+
+  .acciones {
+    a {
+      color: v.$morado;
+    }
+  }
+}

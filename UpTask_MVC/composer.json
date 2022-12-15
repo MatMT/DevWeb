@@ -1,0 +1,12 @@
+{
+  "name": "mateoelias/up-task_mvc",
+  "description": "Proyecto UpTask MVC, PHP 8, SASS",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "MVC\\": "./",
+      "Controllers\\": "./controllers",
+      "Model\\": "./models"
+    }
+  }
+}
