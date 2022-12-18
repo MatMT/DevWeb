@@ -1,9 +1,24 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
-.mensaje {
+.reestablecer {
   margin-top: 5rem;
   .uptask {
-    @include m.textoDegradado(v.$naranja);
+    @include m.textoDegradado(v.$azul);
+  }
+
+  .submit {
+    display: flex;
+    justify-content: flex-end;
+
+    input[type="submit"] {
+      @include m.boton(v.$azul, v.$blanco);
+    }
+  }
+
+  .acciones {
+    a {
+      color: v.$azul;
+    }
   }
 }
