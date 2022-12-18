@@ -1,8 +1,10 @@
 <div class="contenedor login">
     <?php include_once __DIR__ . '/../templates/nombre-sitio.php'; ?>
     <div class="contenedor-sm">
+        <?php include_once __DIR__ . '/../templates/alertas.php'; ?>
+
         <p class="descripcion-pagina">Iniciar Sesión</p>
-        <form action="/" class="formulario" method="POST">
+        <form class="formulario" method="POST" novalidate action="/">
             <div class="campo">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Tu Email" />
