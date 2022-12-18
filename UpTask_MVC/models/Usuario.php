@@ -5,7 +5,7 @@ namespace Model;
 class Usuario extends ActiveRecord
 {
     protected static $tabla = 'usuarios';
-    protected static $columnasDB = ['id', 'email', 'password', 'token', 'confirmado'];
+    protected static $columnasDB = ['id', 'nombre', 'email', 'password', 'token', 'confirmado'];
 
     public function __construct($args = [])
     {
@@ -15,7 +15,7 @@ class Usuario extends ActiveRecord
         $this->password = $args['password'] ?? '';
         $this->password2 = $args['password2'] ?? '';
         $this->token = $args['token'] ?? '';
-        $this->confirmado = $args['confirmado'] ?? '';
+        $this->confirmado = $args['confirmado'] ?? 0;
     }
 
     // Validación para cuentas nuevas
@@ -36,6 +36,19 @@ class Usuario extends ActiveRecord
         if ($this->password !== $this->password2) {
             self::$alertas['error'][] = "Los Password son diferentes";
         }
+
         return self::$alertas;
+    }
+
+    // Hashear el password
+    public function hashPassword()
+    {
+        $this->password = password_hash($this->password, PASSWORD_BCRYPT);
+    }
+
+    // Generar un Token 
+    public function crearToken()
+    {
+        $this->token = uniqid();
     }
 }
