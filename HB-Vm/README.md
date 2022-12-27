@@ -1,2 +1,0 @@
-# HB
- Tarjeta de felicitación
