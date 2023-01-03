@@ -23,6 +23,11 @@
 			text-transform: uppercase;
 			font-weight: bold;
 			font-size: 1.4rem;
+			text-align: center;
+
+			@include m.tablet {
+				text-align: initial;
+			}
 
 			&:hover,
 			&.activo {

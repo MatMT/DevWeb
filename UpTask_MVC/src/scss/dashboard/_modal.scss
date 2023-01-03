@@ -1,0 +1,57 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.modal {
+	position: absolute;
+	background-color: rgb(0 0 0 / 0.8);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	.formulario {
+		max-width: 60rem;
+		background-color: v.$blanco;
+		padding: 2rem;
+		margin: 0 auto;
+		transform: translateY(-50vh);
+		transition-property: all;
+		transition-duration: 500ms;
+		transition-timing-function: ease-in-out;
+		opacity: 0;
+		border-radius: 0.5rem;
+
+		legend {
+			font-size: 2rem;
+			text-align: center;
+			font-weight: bold;
+			margin-bottom: 2rem;
+			display: block;
+		}
+
+		.opciones {
+			display: flex;
+			justify-content: space-between;
+
+			.submit-nueva-tarea {
+				@include m.boton(v.$indigo, v.$blanco);
+			}
+
+			.cerrar-modal {
+				@include m.boton(v.$naranja, v.$blanco);
+			}
+		}
+
+		&.animar {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			opacity: 1;
+		}
+
+		&.cerrar {
+			transform: translateY(-200%);
+			opacity: 0;
+		}
+	}
+}

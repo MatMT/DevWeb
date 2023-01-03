@@ -31,12 +31,9 @@
 		line-height: 1.5;
 		border-radius: 0.5rem;
 
+		color: v.$blanco;
 		&:hover {
 			background-color: darken(v.$indigo, 5%);
-		}
-
-		a {
-			color: v.$blanco;
 		}
 	}
 }
