@@ -90,8 +90,22 @@
     };
 
     // Consultar el servidor para agregar la tarea
-    function agregarTarea(tarea) {
-        console.log('añadiendo');
+    async function agregarTarea(tarea) {
+        // Construir la petición
+        const datos = new FormData();
+        datos.append('nombre', tarea);
+
+        try {
+            const url = 'http://localhost:3000/api/tarea';
+            const respuesta = await fetch(url, {
+                method: 'POST',
+                body: datos
+            });
+            const resultado = await respuesta.json();
+            console.log(resultado);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
 })();
