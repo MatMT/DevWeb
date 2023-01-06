@@ -9,3 +9,56 @@
 		@include m.boton(v.$cyan, v.$blanco);
 	}
 }
+
+.listado-tareas {
+	list-style: none;
+	padding: 0;
+	margin-top: 3rem;
+
+	.no-tareas {
+		text-align: center;
+	}
+}
+
+.tarea {
+	padding: 0.5rem 0.2rem;
+	border-bottom: 2px solid darken(v.$grisClaro, 5%);
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&:last-of-type {
+		border: none;
+	}
+
+	p {
+		font-size: 1.6rem;
+	}
+
+	.opciones {
+		display: flex;
+		gap: 1rem;
+
+		button {
+			border: none;
+			font-size: 1.2rem;
+			padding: 0.6rem 1.3rem;
+			text-transform: uppercase;
+			font-weight: 700;
+			border-radius: 1.2rem;
+			cursor: pointer;
+		}
+		.completa {
+			background-color: v.$azul;
+			color: v.$blanco;
+		}
+		.pendiente {
+			background-color: v.$naranja;
+			color: v.$blanco;
+		}
+		.eliminar-tarea {
+			background-color: v.$rojo;
+			color: v.$blanco;
+		}
+	}
+}
