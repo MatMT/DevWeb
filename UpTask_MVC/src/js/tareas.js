@@ -93,7 +93,9 @@
     async function agregarTarea(tarea) {
         // Construir la petición
         const datos = new FormData();
+
         datos.append('nombre', tarea);
+        datos.append('proyectoId', obtenerProyecto());
 
         try {
             const url = 'http://localhost:3000/api/tarea';
@@ -101,11 +103,32 @@
                 method: 'POST',
                 body: datos
             });
+
             const resultado = await respuesta.json();
-            console.log(resultado);
-        } catch (error) {
+            // Conexión correcta - respuesta de error
+            mostrarAlerta(resultado.mensaje, resultado.tipo, document.querySelector('.formulario legend'));
+
+            if (resultado.tipo === 'exito') {
+                const modal = document.querySelector('.modal');
+                setTimeout(() => {
+                    modal.remove();
+                }, 2500);
+            }
+
+        } catch (error) { // Petición con URL mal hecha o datos no enviados
             console.log(error);
         }
+    }
+
+    function obtenerProyecto() {
+        // Lee la URL
+        const proyectoParams = new URLSearchParams(window.location.search);
+
+        // Encuentra los parametos
+        const proyecto = Object.fromEntries(proyectoParams.entries());
+
+        // Retorna el campo de la URL
+        return proyecto.id;
     }
 
 })();
