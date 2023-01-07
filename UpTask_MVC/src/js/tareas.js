@@ -68,6 +68,9 @@
             btnEliminarTarea.classList.add('eliminar-tarea');
             btnEliminarTarea.dataset.idTarea = tarea.id;
             btnEliminarTarea.textContent = 'Eliminar';
+            btnEliminarTarea.onclick = function () {
+                confirmarEliminarTarea({ ...tarea });
+            }
 
             // Armando contenedor de opciones
             opcionesDiv.appendChild(btnEstadoTarea);
@@ -191,6 +194,54 @@
             });
 
             mostrarTareas();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // Confirmar Eliminar tarea
+    function confirmarEliminarTarea(tarea) {
+        Swal.fire({
+            title: '¿Eliminar Tarea?',
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            cancelButtonText: 'No'
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                eliminarTarea(tarea)
+            }
+        })
+    }
+
+    async function eliminarTarea(tarea) {
+        const { estado, id, nombre } = tarea;
+
+        // Creación de la petición
+        const datos = new FormData();
+        datos.append('id', id);
+        datos.append('nombre', nombre);
+        datos.append('estado', estado);
+        datos.append('proyectoId', obtenerProyecto());
+
+        try {
+            // Conexión a la URL
+            const url = 'http://localhost:3000/api/tarea/eliminar';
+            const respuesta = await fetch(url, {
+                method: 'POST',
+                body: datos
+            });
+
+            const resultado = await respuesta.json();
+
+            if (resultado.resultado === true) {
+                Swal.fire('¡Eliminado!', resultado.mensaje, 'success');
+
+                // Retorna todas las que tengan un id diferente al mío
+                tareas = tareas.filter(tareaMemoria => tareaMemoria.id !== tarea.id);
+                mostrarTareas();
+            }
+
         } catch (error) {
             console.log(error);
         }
