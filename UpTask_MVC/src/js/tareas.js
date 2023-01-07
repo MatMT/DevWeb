@@ -58,6 +58,11 @@
             btnEstadoTarea.textContent = estados[tarea.estado];
             btnEstadoTarea.dataset.estadoTarea = tarea.estado;
 
+            // Copia de arreglo a modificar
+            btnEstadoTarea.ondblclick = function () {
+                cambiarEstadoTarea({ ...tarea });
+            };
+
             // Boton de eliminar
             const btnEliminarTarea = document.createElement('BUTTON');
             btnEliminarTarea.classList.add('eliminar-tarea');
@@ -137,9 +142,22 @@
             mostrarAlerta('El Nombre de la tarea es Obligatorio', 'error', document.querySelector('.formulario legend'));
             return;
         }
-
         agregarTarea(tarea);
     };
+
+    // Cambiar estado de Tarea
+    function cambiarEstadoTarea(tarea) {
+        // Si está como 1 cambiar a 0, e inversa
+        const NuevoEstado = tarea.estado === "1" ? "0" : "1";
+        // Reasignar valor
+        tarea.estado = NuevoEstado;
+
+        actualizarTarea(tarea);
+    }
+
+    function actualizarTarea(tarea) {
+
+    }
 
     // Muestra un mensaje en la interfaz
     function mostrarAlerta(mensaje, tipo, referencia) {
