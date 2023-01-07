@@ -40,8 +40,8 @@ $router->get('/perfil', [DashboardController::class, 'perfil']);
 // API para las tareas
 $router->get('/api/tareas', [TareaController::class, 'index']);
 $router->post('/api/tarea', [TareaController::class, 'crear']);
-$router->post('/api/tareas/actualizar', [TareaController::class, 'update']);
-$router->post('/api/tareas/eliminar', [TareaController::class, 'delete']);
+$router->post('/api/tarea/actualizar', [TareaController::class, 'update']);
+$router->post('/api/tarea/eliminar', [TareaController::class, 'delete']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
