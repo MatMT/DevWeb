@@ -19,6 +19,9 @@ class Proyecto extends ActiveRecord
 
     public function validarProyecto()
     {
+        // Eliminar espacios en blanco
+        $this->proyecto = trim($this->proyecto);
+
         if (!$this->proyecto) {
             self::$alertas['error'][] = 'El nombre del Proyecto es Obligatorio';
         }

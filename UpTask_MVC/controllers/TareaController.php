@@ -55,6 +55,10 @@ class TareaController
     public static function update()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Validar que el proyecto exista
+            $proyecto = Proyecto::where('url', $_POST['proyectoId']);
+
+            echo json_encode(['proyecto' => $proyecto]);
         }
     }
 
