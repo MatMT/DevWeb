@@ -183,7 +183,14 @@
                     document.querySelector('.contenedor-nueva-tarea'));
             }
 
+            tareas = tareas.map(tareaMemoria => {
+                if (tareaMemoria.id === id) {
+                    tareaMemoria.estado = estado;
+                }
+                return tareaMemoria;
+            });
 
+            mostrarTareas();
         } catch (error) {
             console.log(error);
         }
