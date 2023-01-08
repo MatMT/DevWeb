@@ -43,8 +43,11 @@
             console.log(error);
         }
     }
+
     function mostrarTareas() {
         limpiarTareas();
+        calcularPendientes();
+        calcularCompletadas();
 
         const arrayTareas = filtradas.length ? filtradas : tareas;
 
@@ -87,7 +90,7 @@
             btnEstadoTarea.dataset.estadoTarea = tarea.estado;
 
             // Copia de arreglo a modificar
-            btnEstadoTarea.ondblclick = function () {
+            btnEstadoTarea.onclick = function () {
                 cambiarEstadoTarea({ ...tarea });
             };
 
@@ -113,6 +116,29 @@
             listadoTareas.appendChild(contenedorTarea);
 
         });
+    }
+
+    function calcularPendientes() {
+        const totalPendientes = tareas.filter(tarea => tarea.estado === "0");
+        const pendientesRadio = document.querySelector('#pendientes');
+
+        if (totalPendientes.length === 0) {
+            pendientesRadio.disabled = true;
+        } else {
+            pendientesRadio.disabled = false;
+        }
+    }
+
+    function calcularCompletadas() {
+        const totalCompletadas = tareas.filter(tarea => tarea.estado === "1");
+        const completadasRadio = document.querySelector('#completadas');
+
+
+        if (totalCompletadas.length === 0) {
+            completadasRadio.disabled = true;
+        } else {
+            completadasRadio.disabled = false;
+        }
     }
 
     function mostrarFormulario(editar = false, tarea = {}) {
@@ -182,7 +208,6 @@
 
         document.querySelector('.dashboard').appendChild(modal);
     }
-
 
     // Cambiar estado de Tarea
     function cambiarEstadoTarea(tarea) {
