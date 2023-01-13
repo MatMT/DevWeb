@@ -1,0 +1,536 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+@font-face {
+    font-family: 'Retrocycle';
+   src: url(../fonts/Retrocycles.otf) format('OpenType');
+    font-style: normal;
+    font-weight: normal;
+  }
+  @font-face {
+    font-family: 'Averta';
+    src: url(../fonts/FontsFree-Net-AvertaDemoPE-ExtraBold.ttf) format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Century Gothic;
+    box-sizing: border-box;
+}
+body{
+    background-color: #d1d1db;
+    overflow-x: hidden;
+    
+}
+html{
+    scroll-behavior: smooth;
+}
+h1{
+  text-align: center;
+  padding-bottom: 2%;
+}
+.home{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: justify;
+}
+.in-flex{
+    flex: 1;
+    min-width: 250px;
+}
+.in-flex:first-child{
+flex: 2;
+padding: 25px;
+background-color: #fff;
+margin: 20px;
+margin-bottom: 0px;
+}
+.in-flex div{
+ padding: 0;
+  background-color: #fff;
+  margin: auto ; 
+
+}
+.banner{
+    position: relative;
+    top: 0px; left: 0px;
+    width: 100vw; 
+    height: 700px;
+    margin-top: 0% ;
+    z-index: 1;
+	background-color: #F5F5F5;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	transition: all .1s ease-out;
+    background-image: url("../img/donbosco_estatua.jpg");
+    background-attachment: fixed;
+}
+
+.banner-content{
+    margin: 0;
+    top:0;
+	padding: 0;
+	width: 100vw;
+	height: 100%;
+	color: #FFF;
+	background-color: rgba(12, 35, 61, 0.6);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+/* Banner content*/
+.banner-content h1:first-child{
+	font-size: 18vh;
+    text-align: center;
+    font-family: 'Retrocycle';
+    padding-left: 45px;
+    color: #b1c7bd ;
+    -webkit-text-stroke: 5px white;
+}
+.banner-content h1:nth-child(2){
+	margin-top: -75px;
+	font-size: 20vh;
+    text-align: center;
+    font-family: 'Averta';
+    text-transform: uppercase;
+    font-style: italic;
+    color: #232958;
+    -webkit-text-stroke: 6px white;
+    
+}
+.banner-content h3:nth-child(3){
+    margin-top: -80px;
+    font-family: 'Averta';
+    font-size: 20vh;
+    font-style: italic;
+    text-align: center;
+    color: #232958;
+    -webkit-text-stroke: 6px white;
+}
+.banner-content a{
+	text-decoration: none;
+	color: #FFF;
+	padding: 9px 20px;
+    border: 2px solid #FFF;
+    font-family: sans-serif;
+	text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    margin-top: 10px;
+    border-radius: 100px;
+}
+.banner-content a:hover{
+	background-color: #fff;
+	color: #0D252E;
+}
+
+@media screen and (max-width:500px) {
+    .banner-content h1:first-child{
+        font-size: 14vh;
+      
+        -webkit-text-stroke: 5px white;
+    }
+    .banner-content h1:nth-child(2){
+        margin-top: -50px;
+        font-size: 16vh;
+        -webkit-text-stroke: 6px white;
+        
+    }
+    .banner-content h3:nth-child(3){
+        margin-top: -60px;
+        font-size: 16vh;
+        -webkit-text-stroke: 6px white;
+    }
+}
+
+@media screen and (max-width:411px) {
+    .banner-content h1:first-child{
+        font-size: 12vh;
+      
+        -webkit-text-stroke: 5px white;
+    }
+    .banner-content h1:nth-child(2){
+        margin-top: -50px;
+        font-size: 14vh;
+        -webkit-text-stroke: 6px white;
+        
+    }
+    .banner-content h3:nth-child(3){
+        margin-top: -60px;
+        font-size: 14vh;
+        -webkit-text-stroke: 6px white;
+    }
+}
+
+.caja{
+    display: flex;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: -60px;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 50px;
+}
+.caja div{
+   height: 150px;
+    width: 150px;
+    cursor: pointer;
+    z-index: 2;
+    background-color: white;
+    padding: 5px;
+    
+}
+@media screen and (max-width:400px) {
+    .caja{
+        height: 100%;
+    }
+    .caja div{
+        height: 200px;
+    width: 200px;
+        padding: 30px;
+    }
+}
+.caja div{
+        transition: transform .2s; 
+    }
+     
+    .caja div:hover {
+        transform: scale(1.5);
+        color: white;
+        background-color: #0D252E;
+        z-index: 4; 
+    }
+
+    .caja div:hover i{
+        color: white;
+    }
+.caja div i{
+    font-size: 50px;
+}
+
+.caja div p{
+    font-size: 15px;
+}
+.caja div h4{
+    font-size: 20px;
+}
+#principal{
+    margin-top: 3%;
+    display: block;
+    height: 100%;
+    background-color: #fff;
+    justify-content: center;
+    text-align: justify;
+}
+#principal .col{
+    min-width: 320px;
+}
+#principal h1{
+    text-align: center;
+    padding: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: #090940;
+}
+
+@media screen and (max-width:450px) {
+   #cards-contenedor #cards .col a{
+        position: relative;
+        display: flex;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        max-width: 150px;
+    }
+    #cards-contenedor #cards .col h3{
+        text-align: center;
+    }
+}
+#logo_museo{
+    width: 100%;
+    margin-top: -100px;
+    min-width: 325px;
+}
+#bloques{
+    display: flex;
+}
+#contenedor2{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    background-color: #fff;
+    justify-content: center;
+}
+
+#contenedor2 .col{
+    margin: 15px auto;
+    min-width: 320px;
+}
+#contenedor2 .col p{
+    text-align: justify;
+}
+#contenedor2 h1{
+   text-align: center;
+}
+
+/*CARRUSEL*/
+.carousel-inner{
+    min-width: 325px;
+    min-height: 300px;
+}
+.carousel-inner img{
+    min-width: 325px;
+    width: 400px;
+    height: 300px;
+    min-height: 300px;
+}
+
+/*Cards*/
+#cards-contenedor{
+    background-color: #fff;
+    height: 100%;
+    margin-top: 15px;
+    text-align: justify;
+    display: flex;
+    flex-wrap: wrap;
+}
+.titulo-card{
+    text-align: justify;
+    margin: 15px;
+}
+#cards a{
+    text-decoration: none;
+	color: black;
+	padding: 9px 20px;
+    border: 1px solid black;
+    font-family: sans-serif;
+	text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    margin-top: 10px;
+    border-radius: 100px;
+}
+#cards a:hover{
+    color: #fff;
+    background-color: #090940;
+    border: 1px solid white
+}
+.card-texto{
+    width: 100%;
+    min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    width: 100%;
+    min-width: 200px;
+    max-width: 350px;
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px auto;
+    text-align: center;
+    transition: all 0.25s;
+    justify-content: center;
+}
+
+.card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img{
+    width: 100%;
+    height: 220px;
+}
+
+
+.card h4{
+    font-weight: 600;
+}
+
+.card p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#cards .card a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #0D252E;
+    width: 150px;
+    margin:auto;
+}
+#cards .card a:hover{
+    color: white;
+}
+
+/*MAPA*/
+
+#mapa-contenedor{
+    margin-top: 15px;
+    width: 100vw;
+    height: 100%;
+    background-color: #0D252E;
+    color: #9DD8EE;
+    text-align: justify;
+}
+#mapa-contenedor h1{
+        text-align: center;
+        margin: 15px auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-style: italic;
+        color: #FFF;
+}
+.mapaframe{
+    width: 100%;
+    padding: 20px;
+    min-width: 260px;
+    min-height: 300px;
+}
+#mapa-contenedor a{
+    text-decoration: none;
+	color: #FFF;
+	padding: 9px 20px;
+    border: 1px solid #FFF;
+    font-family: sans-serif;
+	text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    margin-top: 10px;
+    border-radius: 100px;
+}
+#mapa-contenedor a:hover{
+    background-color: white;
+    color: #090940;
+}
+
+@media screen and (max-width:450px) {
+    #mapa a{
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 200px;
+    }
+ }
+
+ /*Video*/
+ #video-contenedor{
+     height: 100vh;
+     background-color: #fff;
+    
+ }
+ .video{
+     margin: auto;
+     background-color: #fff;
+     justify-content: center;
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     align-self: center;
+     width: 100vw;
+     height: 100vh;
+ }
+ .video{
+     width: 100%;
+     height: 100%;
+     min-width: 300px;
+ }
+/* footer */
+
+footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom p a{
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+        text-decoration: none;
+        cursor: pointer;
+    color: #fff;
+    font-weight: 200;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+
+
+
+

@@ -1,0 +1,808 @@
+/*FUENTES*/
+@font-face {
+    font-family: 'Century';
+   src: url(../fonts/Fuente/CenturyGothicPaneuropeanSemiBold.ttf) format('OpenType');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Bold';
+   src: url(../fonts/Fuente/CenturyGothicPaneuropeanBold.ttf) format('OpenType');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Gotic';
+   src: url(../fonts/Fuente/CenturyGothicPaneuropeanRegular.ttf) format('OpenType');
+    font-style: normal;
+    font-weight: normal;
+}
+/*ENCABEZADO */
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/Fondo-azul.jpg);
+    width: 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header h1{
+    color: white;
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cabeza{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80%;
+}
+.cabeza a{
+    color: white;
+    padding: 5px 20px;
+    border: solid white 2px;
+    border-radius: 16px;
+    text-decoration: none;
+    background-color: transparent;
+    z-index: 1;
+}
+.cabeza a:hover{
+    background-color: #fff;
+    transition: 0.5s all ease-in-out;
+    cursor: pointer;
+    color: #000643;
+}
+.cabeza h1{
+    text-align: center;
+    font-family: "Bold";
+}
+
+.logo{
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: 100vh;
+}
+.logo img{
+    width: 250px;
+}
+
+/*APARTADO DE HISTORIA */
+
+.historia{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000643;
+    display: flex;
+    flex-direction: column;
+    padding-top: 45px;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+}
+.part1{
+    width: 100%;
+    min-width: 320px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    height: 80%;
+}
+.part2{
+    width: 95%;
+    padding: 10px 35px;
+    color: white;
+    height: 20%;
+}
+.part2 p{
+    margin-bottom: 0%;
+    text-align: justify;
+}
+.pic5{
+    width: 40%;
+    padding-bottom: 10px;
+}
+.pic5 img{
+    width: 100%;
+}
+.info{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.info h1{
+    width: 100%;
+    text-align: right;
+    color: white;
+    padding: 0px 10px;
+    font-size: 70px;
+    line-height: 50px;
+    font-family: "Bold";
+}
+.info h1 span{
+    color: #fcc50a;
+    font-size: 50px;
+}
+.sub{
+    font-family: "Century";
+    font-size: 25px;
+}
+.info p{
+    color: white;
+    text-align: justify;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0%;
+}
+
+/*APARTADO ESPACIO*/
+
+.espacio{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #000643 40%, white 0%);
+}
+.apar1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 80%;
+}
+.texto{
+    width: 45%;
+}
+.texto h1{
+    text-align: left;
+    color: white;
+    font-size: 55px;
+    margin-bottom: 70px;
+    font-family: "Bold";
+}
+.texto p{
+    text-align: justify;
+}
+.pic{
+    width: 38%;
+}
+.pic img{
+    width: 100%;
+}
+.apar2{
+    margin-top: 10px;
+    width: 89%;
+    text-align: justify;
+}
+
+/*APARTADO CREAJ*/
+
+.crea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 82vh;
+}
+
+.par1{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.par1 h1{
+    color: #000643;
+    font-size: 55px;
+    margin-bottom: 40px;
+    font-family: "Bold";
+}
+.par1 p{
+    font-size: 17px;
+}
+.par2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.par2 .car{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.car h1{
+    margin-top: 20px;
+    color: black;
+    font-size: 35px;
+    font-family: "Century";
+}
+
+.a{
+    padding-top: 25px;
+    border-top: 3px solid #fcc50a ;
+}
+.y{
+    padding-top: 25px;
+    border-top: 3px solid #000643 ;
+}
+
+/*PARTICIPAN*/
+
+.participaron{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 5%;
+}
+
+
+.participaron h1{
+    color: #000643;
+    text-align: center;
+    font-family: "Bold";
+}
+.participaron h1 span{
+    color: #fcc50a;
+    font-size: 60px;
+}
+.participaron p{
+    width: 90%;
+    text-align: justify;
+    margin:10px 0px;
+}
+.participaron img{
+    width: 200px;
+    border-left: 4px solid #fcc50a;
+    padding-left: 2%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+/*PROPOSITO*/
+.proposito{
+    width: 100%;
+    height: 100%;
+    background-color: #000643;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    
+  
+}
+.box{
+    background-color: white;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.box-izquierda{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+.box-izquierda img{
+    width: 500px;
+    border-radius: 15px;
+    z-index: 3;
+}
+.box-derecha{
+    width: 60%;
+    background-color: #1d295f;
+    color: #fff;
+    padding: 40px;
+    text-align: justify;
+    height: 100%;
+}
+.box-derecha h1{
+    font-family: "Bold";
+    font-size: 4em;
+    margin-bottom: 4%;
+}
+.azul{
+
+        background-color: #000643;
+        width: 40%;
+        height: 200px;
+        position: absolute;
+        z-index: 2;
+        margin-top: 5%;
+        left: 0;
+
+}
+.inform{
+    width: 90%;
+    height: 60%;
+    margin-top: 60px;
+}
+.inform h1{
+    color: #000643;
+    text-align: center;
+    font-family: "Bold";
+    margin-top: 5%;
+}
+.inform h1 span{
+    font-size: 60px;
+    
+    color: #fcc50a;
+}
+.box .inform p{
+    width: 100%;
+    text-align: justify;
+    margin: 30px 0px;
+    font-family: '';
+}
+
+/*RADICA*/
+
+.radica{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 5%;
+    background-color: #000643;
+}
+
+.radica .in{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 30px;
+    text-align: justify;
+}
+.radica .in h1{
+    color: #fff;
+    font-size: 70px;
+    text-align: center;
+    width: 100%;
+    font-family: "Bold";
+    padding-bottom: 5%;
+   
+}
+.radica .fot{
+    width: 50%;
+    height: 100%;
+    padding-left: 20px;
+}
+.radica .fot2{
+    width: 50%;
+    height: 100%;
+    padding-right: 20px;
+}
+.fot2 img{
+    width: 100%;
+}
+.fot img{
+    width: 100%;
+}
+
+.proposito2{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000643;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.box2{
+    background-color: white;
+    width: 97%;
+    min-height: 97vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inform2{
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+.picbox{
+    width: 40%;
+    margin-bottom: 40px;
+    margin-top: 65px;
+}
+.picbox img{
+    width: 100%;
+    
+}
+
+/*TELONES*/
+
+.telones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.telones-img{
+    height: 60vh;
+    width: 100%;
+    background-image: url(../img/telones.JPG);
+    background-position: center;
+    background-size: cover;
+}
+.telones-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 40vh;
+}
+
+.telones-info h1{
+    width: 35%;
+    color: white;
+    text-align: left;
+    background-color: #000643;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-family: "Bold";
+}
+.telones-info p{
+    width: 65%;
+    padding: 0px 35px;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/*AFICHES */
+
+.afiches{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: linear-gradient(90deg, white 50%, #000643 0%);
+}
+.afiches-info{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 32vh;
+    padding: 5px;
+}
+.afiches-info h1{
+    font-size: 60px;
+    color: #000643 ;
+    font-family: "Bold";
+    margin-bottom: 10px;
+}
+
+
+.afiches-info h2{
+    font-size: 20px;
+    color: black;
+}
+
+.afiches-card{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.picSlide{
+    width: 100%;
+    height: 90vh;
+}
+.carousel{
+    width: 60%;
+}
+.carta{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #1d295f;
+    height: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+.texto2{
+    color: #fff;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    width: 69%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 2%;
+    margin-left: 2%;
+    z-index: 3;
+}
+.blanco{
+    background-color: #fff;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    margin-top: 11%;
+    left: 0;
+}
+.imagen{
+    width: 26%;
+    right: 0;
+    margin: 5px;
+    z-index: 3;
+}
+.imagen img{
+    width: 100%;
+    min-width: 320px;
+    border-radius: 15px;
+}
+
+/*VIDEO*/
+
+.video{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #000643 ;
+}
+.video-titulo{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.video-titulo h1{
+    font-size: 90px;
+    color: white;
+    border-left: 40px solid #fcc50a;
+    padding: 50px 80px;
+    font-family: "Bold";
+}
+.video-titulo h1 span{
+    color: #fcc50a;
+}
+.video-vid{
+    width: 50%;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+iframe{
+    width: 100%;
+    height: 80%;
+}
+
+
+/*ENLACES*/
+.enlaces-caja{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+.enlaces-caja h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2%;
+    color: #000643;
+    font-size: 50px;
+    text-align: center;
+    font-family: "Bold";
+}
+
+.cajas-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2%;
+}
+.cajas-enlaces{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    min-width: 300px;
+    height: 100%;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #000643;
+    transition: ease 1.5s all ;
+}
+.cajas-enlaces:hover{
+    transform: scale(1.1);
+    transition: ease 1.5s all ;
+}
+.enlace{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10px;
+}
+.enlace a{
+    color: white;
+    padding: 5px 20px;
+    border: solid white 2px;
+    border-radius: 16px;
+    text-decoration: none;
+    background-color: transparent;
+    z-index: 1;
+    margin: 10px;
+}
+.enlace a:hover{
+    background-color: #fff;
+    transition: 0.5s all ease-in-out;
+    cursor: pointer;
+    color: #000643;
+}
+
+@media screen and (max-width: 500px) {
+    .enlaces-caja h1{
+        font-size: 35px;
+    }
+}
+
+.imagen-enlace{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.imagen-enlace img{
+    width: 200px;
+}
+
+/*FOOTER*/
+
+footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100%;
+    font-family: "cocon";
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+    font-family: Century;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    font-family: "Gotic";
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #000;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    font-family: "Gotic";
+}
+.footer-bottom p a{
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+        text-decoration: none;
+        cursor: pointer;
+    color: #fff;
+    font-weight: 200;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+
+
+@media screen and (max-width: 920px) {
+    
+}
