@@ -25,6 +25,10 @@
 		}
 	}
 
+	&.ocultar {
+		opacity: 0;
+	}
+
 	@include m.tablet {
 		height: 100%;
 		opacity: 1;
@@ -32,10 +36,28 @@
 		background-color: v.$indigo;
 	}
 
-	h2 {
-		color: v.$blanco;
-		margin: 0;
-		text-align: center;
+	.contenedor-sidebar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h2 {
+			color: v.$blanco;
+			margin: 0;
+			text-align: center;
+		}
+		.cerrar-menu {
+			display: flex;
+			justify-content: center;
+			height: 2rem;
+			width: 2rem;
+			img {
+				cursor: pointer;
+			}
+			@include m.tablet {
+				display: none;
+			}
+		}
 	}
 
 	.sidebar-nav {
@@ -43,24 +65,39 @@
 		a {
 			color: v.$blanco;
 			display: block;
-			margin-bottom: 1.5rem;
+
 			padding: 0.7rem;
 			transition-property: background-color;
 			transition-duration: 300ms;
 			text-transform: uppercase;
 			font-weight: bold;
-			font-size: 1.4rem;
+			font-size: 2.4rem;
 			text-align: center;
-
-			@include m.tablet {
-				text-align: initial;
-			}
+			margin-bottom: 2rem;
 
 			&:hover,
 			&.activo {
 				background-color: darken(v.$indigo, 20%);
 				border-radius: 0.5rem;
 			}
+
+			@include m.tablet {
+				font-size: 1.2rem;
+				text-align: initial;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	.cerrar-session-mobile {
+		margin-top: 10rem;
+
+		.cerrar-sesion {
+			@include m.boton(v.$indigo, v.$blanco);
+		}
+
+		@include m.tablet {
+			display: none;
 		}
 	}
 }
