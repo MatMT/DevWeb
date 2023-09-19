@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Expresiones Regulares</title>
+    <link rel="stylesheet" href="CSS/discusion1.css">
+</head>
+<body>
+    <h1>Validador de Expresiones Regulares</h1>
+    
+    <!-- Formulario para la validación -->
+    <form id="validatorForm">
+        <label for="validationType">Selecciona el tipo de validación:</label>
+        <select id="validationType">
+            <option value="ipv4">Dirección IPv4</option>
+            <option value="url">Dirección Web (URL)</option>
+            <option value="email">Dirección de Correo Electrónico</option>
+        </select>
+        <br>
+
+        <label for="inputData">Ingresa la dirección:</label>
+        <input type="text" id="inputData" placeholder="Ingresa la dirección">
+        <br>
+
+        <button type="button" onclick="validate()">Validar</button>
+    </form>
+
+    <!-- Resultado de la validación -->
+    <div id="result"></div>
+
+    <script src="JS/discusion1.js"></script>
+</body>
+</html>

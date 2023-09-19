@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "name": "Chrome",
+            "percent": 60.53
+        },
+        {
+            "name": "Safari",
+            "percent": 26.31
+        },
+        {
+            "name": "Edge",
+            "percent": 5.32
+        },
+        {
+            "name": "Samsung Internet",
+            "percent": 2.6
+        },
+        {
+            "name": "Firefox",
+            "percent": 2.46
+        },
+        {
+            "name": "Otros",
+            "percent": 2.77
+        }
+    ]
+}

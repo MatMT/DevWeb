@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "name": "Android",
+            "percent": 39.2
+        },
+        {
+            "name": "Windows",
+            "percent": 30.12
+        },
+        {
+            "name": "iOS",
+            "percent": 16.48
+        },
+        {
+            "name": "OS X",
+            "percent": 8.77
+        },
+        {
+            "name": "Unknown",
+            "percent": 1.84
+        },
+        {
+            "name": "Chrome OS",
+            "percent": 1.44
+        }
+    ]
+}
