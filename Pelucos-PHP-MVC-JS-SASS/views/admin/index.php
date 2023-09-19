@@ -4,16 +4,16 @@
 include_once __DIR__ . '/../templates/barra.php';
 ?>
 
-<h2>Buscar Citas</h2>
+<h2>Citas hoy</h2>
 
-<div class="busqueda">
-    <form action="" class="formulario">
+<!-- <div class="busqueda">
+    <form action="" class="formulario" method="get">
         <div class="campo">
             <label for="fecha">Fecha</label>
             <input type="date" id="fecha" name="fecha" value="<?php echo $fecha; ?>" />
         </div>
     </form>
-</div>
+</div> -->
 
 <?php
 if (count($citas) === 0) {

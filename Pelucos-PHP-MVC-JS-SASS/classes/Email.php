@@ -29,8 +29,8 @@ class Email
         $mail->Password = '8737a40601ad73';
 
         // Atributos de dominio
-        $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+        $mail->setFrom('cuentas@pelucos.com');
+        $mail->addAddress('cuentas@pelucos.com', 'pelucos.com');
         $mail->Subject = 'Confirma tu cuenta';
 
         // Contenido en HTML
@@ -38,8 +38,9 @@ class Email
         $mail->CharSet = 'UTF-8';
 
         $contenido = "<html>";
-        $contenido .= "<p><strong>Hola " . $this->nombre . ".</strong> Has creado tu cuenta en AppSalon, solo debes confirmarla presionando el siguiente enlace.</p> ";
-        $contenido .= "<p>Presion aquí: <a href='http:localhost:3000/confirmar-cuenta?token=" . $this->token . "'> Confirmar Cuenta </a></p>";
+        $contenido .= "<p><strong>Hola " . $this->nombre . ".</strong> Has creado tu cuenta en Pelucos, solo debes confirmarla presionando el siguiente enlace.</p> ";
+        // $contenido .= "<p>Presion aquí: <a href='http:localhost:3000/confirmar-cuenta?token=" . $this->token . "'> Confirmar Cuenta </a></p>";
+        $contenido .= "<p>Presion aquí: <a href='http:localhost:3000'> Confirmar Cuenta </a></p>";
         $contenido .= "<p>Si tu no solicitaste esta cuenta, puedes ignorar este correo</p>";
         $contenido .= "</html>";
 
@@ -61,8 +62,8 @@ class Email
         $mail->Password = '8737a40601ad73';
 
         // Atributos de dominio
-        $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+        $mail->setFrom('cuentas@pelucos.com');
+        $mail->addAddress('cuentas@pelucos.com', 'pelucos.com');
         $mail->Subject = 'Reestablece tu password';
 
         // Contenido en HTML

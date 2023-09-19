@@ -30,7 +30,7 @@ include_once __DIR__ . '/../templates/barra.php';
             </div>
             <div class="campo">
                 <label for="fecha">Fecha</label>
-                <input type="date" id="fecha" name="fecha" min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>">
+                <input type="date" id="fecha" name="fecha" min="<?php echo date('Y-m-d', strtotime('+0 day')); ?>">
             </div>
             <div class="campo">
                 <label for="hora">Hora</label>

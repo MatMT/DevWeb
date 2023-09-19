@@ -1,0 +1,11 @@
+INSERT INTO `servicios` (`id`, `nombre`, `precio`) VALUES
+(1, 'Corte de Cabello Mujer', 4.50),
+(2, 'Corte de Cabello Hombre', 3.00),
+(3, 'Corte de Cabello Niño', 2.50),
+(4, 'Peinado Mujer', 4.50),
+(5, 'Peinado Hombre', 4.50),
+(6, 'Peinado Niño', 3.00),
+(7, 'Corte de Barba', 2.00),
+(8, 'Tinte Mujer', 25.00),
+(9, 'Lavado de Cabello', 7.50),
+(10, 'Tratamiento Capilar', 20.00);
