@@ -1,0 +1,15 @@
+{
+  "name": "api_el232710",
+  "version": "1.0.0",
+  "description": "Actividad Evaluada 2 | API con NodeJs y Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "Express"
+  ],
+  "author": "Óscar Elías @_mat.elias_",
+  "license": "ISC"
+}
