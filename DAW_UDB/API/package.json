@@ -1,15 +1,23 @@
 {
   "name": "api_el232710",
+  "type": "module",
   "version": "1.0.0",
   "description": "Actividad Evaluada 2 | API con NodeJs y Express",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "server": "nodemon index.js"
   },
   "keywords": [
     "Node",
     "Express"
   ],
   "author": "Óscar Elías @_mat.elias_",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
