@@ -27,7 +27,7 @@ const formularioRegistro = async (req, res) => {
     const usuario = new User(req.body);
 
     // Hasear el password
-    usuario.password = await bcrypt.hash(password, 10)
+    usuario.password = await bcrypt.hashSync(password, 10)
 
     try {
         await usuario.save();
