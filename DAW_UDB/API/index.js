@@ -1,6 +1,7 @@
 import express from 'express';
 import userRoutes from './routes/userRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import subjectRoutes from './routes/subjectRoutes.js';
 import conectarDB from './config/db.js';
 
 // Crear la app =====================
@@ -19,6 +20,7 @@ server.use(express.json());
 // get = ruta especifica | use = rutas con una diagonal
 server.use('/api/usuarios', userRoutes);
 server.use('/api/auth', authRoutes);
+server.use('/api/enlaces', subjectRoutes);
 
 // Arrancar el servidor
 server.listen(port, '0.0.0.0', () => {
