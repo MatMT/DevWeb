@@ -21,12 +21,13 @@
 }
 
 .tarea {
-	padding: 0.5rem 0.2rem;
+	padding: 0.5rem 2rem;
 	border-bottom: 2px solid darken(v.$grisClaro, 5%);
 	margin-bottom: 1rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
 	&:last-of-type {
 		border: none;
 	}
