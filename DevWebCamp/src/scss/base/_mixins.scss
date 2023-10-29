@@ -1,4 +1,4 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 /** Media Queries **/
 @mixin telefono {
@@ -30,19 +30,53 @@
     font-weight: 700;
     border: none;
     transition-property: background-color;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     text-align: center;
     width: 100%;
     display: inline-block;
 
     &:hover {
-        background-color: darken( $bgColor, 10% );
+        background-color: darken($bgColor, 10%);
         cursor: pointer;
     }
 }
 
-@mixin grid($columnas, $espaciado ) {
+@mixin grid($columnas, $espaciado) {
     display: grid;
     gap: $espaciado;
     grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin contenedor {
+    // max-width: 120rem;
+    // width: 95%;
+    width: min(95%, 140rem);
+    margin: 0 auto;
+}
+
+@mixin contenedor-sm {
+    width: min(95%, 60rem);
+    margin: 0 auto;
+}
+
+@mixin headings {
+    font-family: v.$fuente-principal;
+    font-weight: v.$black;
+    margin: 2rem 0;
+}
+
+@mixin nombre-pagina {
+    @include headings;
+    margin: 6rem 0 3rem 0;
+    text-align: center;
+}
+
+@mixin text-fluid($min, $max) {
+    font-size: clamp($min, -0.8rem + 10vw, $max);
+}
+
+@mixin text-degradado($inicio, $final) {
+    background: linear-gradient(to right, $inicio, $final);
+    background-clip: text;
+    color: transparent;
 }

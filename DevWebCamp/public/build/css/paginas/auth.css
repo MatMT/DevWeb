@@ -1,0 +1,9 @@
+/** Media Queries **/
+.auth {
+  width: min(95%, 60rem);
+  margin: 0 auto;
+}
+.auth__texto {
+  font-size: 2rem;
+}
+/*# sourceMappingURL=auth.css.map */
