@@ -416,6 +416,9 @@ h3 {
   color: #1a1b15;
   font-size: 1.6rem;
 }
+.acciones--centrar {
+  justify-content: center;
+}
 
 .header {
   min-height: 60rem;
@@ -652,5 +655,23 @@ h3 {
   .menu-redes {
     justify-content: flex-end;
   }
+}
+
+.alerta {
+  padding: 1.5rem 1.5rem 1.5rem 3rem;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.alerta__error {
+  background-color: #ffdcdc;
+  border-left: 0.5rem solid rgb(169, 0, 0);
+  color: rgb(169, 0, 0);
+}
+.alerta__exito {
+  background-color: #abfeab;
+  border-left: 0.5rem solid #02db02;
+  color: #017601;
 }
 /*# sourceMappingURL=app.css.map */

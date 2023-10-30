@@ -4,7 +4,11 @@
     </h2>
     <p class="auth_titulo">Restaura tu acceso a DevWebCamp</p>
 
-    <form action="" class="formulario">
+    <?php
+    require_once __DIR__ . '/../templates/alertas.php'
+    ?>
+
+    <form action="/olvide" method="POST" class="formulario">
         <div class="formulario__campo">
             <label for="email" class="formulario__label">Email</label>
             <input type="email" class="formulario__input" placeholder="Tu Email" id="email" name="email" />
