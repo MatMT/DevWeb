@@ -68,7 +68,8 @@
             200ms color ease,
             200ms border-radius ease;
 
-        &:hover {
+        &:hover,
+        &--actual {
             background-color: lighten(v.$gris-oscuro, 20);
             color: v.$blanco;
             border-radius: 1rem;
@@ -92,5 +93,35 @@
         @include m.tablet {
             padding: 1rem 5rem 3rem;
         }
+    }
+
+    &__contenedor-btn {
+        @include m.tablet {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__btn {
+        @include m.boton(v.$azul, v.$blanco);
+        text-transform: uppercase;
+        font-size: 1.4rem;
+
+        @include m.tablet {
+            width: auto;
+        }
+    }
+
+    &__contenedor {
+        @include m.shadow;
+        background-color: v.$blanco;
+        padding: 2rem;
+    }
+
+    &__formulario {
+        @extend .dashboard__contenedor;
+        @include m.contenedor-md;
+        border-radius: 0.5rem;
     }
 }

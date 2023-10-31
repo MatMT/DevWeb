@@ -372,21 +372,55 @@ h3 {
   display: flex;
   flex-direction: column;
 }
+.formulario__fieldset {
+  border: none;
+  margin-top: 1rem;
+  padding: 0;
+}
+.formulario__legend {
+  color: #64748b;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
 .formulario__campo {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin: 1.5rem 0;
 }
+.formulario__contenedor-icono {
+  display: flex;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.formulario__icono {
+  background-color: #1e293b;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formulario__icono {
+  color: #ffffff;
+  font-size: 2rem;
+}
 .formulario__label {
   display: block;
   font-size: 1.8rem;
   color: rgba(26, 27, 21, 0.8);
 }
-.formulario__input {
+.formulario__input, .formulario__input--sociales {
   padding: 1rem;
   border: 1px solid #b1c7dd;
   border-radius: 0.5rem;
+}
+.formulario__input--file {
+  border: none;
+}
+.formulario__input--sociales {
+  flex: 1;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .formulario__submit {
   background-color: #007df4;
@@ -406,6 +440,9 @@ h3 {
 .formulario__submit:hover {
   background-color: #0063c1;
   cursor: pointer;
+}
+.formulario__submit--registrar {
+  width: 100%;
 }
 
 .acciones {
@@ -750,7 +787,7 @@ h3 {
   padding: 1.8rem;
   transition: 200ms background-color ease-in-out, 200ms color ease, 200ms border-radius ease;
 }
-.dashboard__enlace:hover {
+.dashboard__enlace:hover, .dashboard__enlace--actual {
   background-color: #40587f;
   color: #ffffff;
   border-radius: 1rem;
@@ -772,5 +809,46 @@ h3 {
   .dashboard__contenido {
     padding: 1rem 5rem 3rem;
   }
+}
+@media (min-width: 768px) {
+  .dashboard__contenedor-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 4rem;
+  }
+}
+.dashboard__btn {
+  background-color: #007df4;
+  padding: 1.5rem 4rem;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.dashboard__btn:hover {
+  background-color: #0063c1;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .dashboard__btn {
+    width: auto;
+  }
+}
+.dashboard__contenedor, .dashboard__formulario {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  background-color: #ffffff;
+  padding: 2rem;
+}
+.dashboard__formulario {
+  width: min(95%, 80rem);
+  margin: 0 auto;
+  border-radius: 0.5rem;
 }
 /*# sourceMappingURL=app.css.map */
