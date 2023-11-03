@@ -157,3 +157,34 @@
 @mixin shadow {
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
+
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin tags {
+    @include reset-list;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    > li {
+        background-color: v.$azul;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        color: v.$blanco;
+        font-weight: v.$bold;
+        transition-property: background-color;
+        transition-duration: 0.3s;
+
+        &:hover {
+            cursor: pointer;
+            background-color: lighten(v.$rojo, 10);
+        }
+    }
+}

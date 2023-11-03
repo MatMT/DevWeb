@@ -34,7 +34,7 @@
         <label class="formulario__label" for="tags_input">Áreas de Experiencia (separadas por coma)</label>
         <input type="text" class="formulario__input" id="tags_input" placeholder="Ej. Node.js, PHP, CSS, Laravel, React, UI / UX">
 
-        <div id="tags" class="form_listado"></div>
+        <div id="tags" class="formulario__listado"></div>
         <input type="hidden" name="tags" value="<?php echo $ponente->tags ?? '' ?>">
     </div>
 </fieldset>
