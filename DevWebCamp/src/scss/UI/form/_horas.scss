@@ -16,10 +16,22 @@
         padding: 1rem;
         text-align: center;
 
-        &:hover {
+        &:hover,
+        &--selected {
             cursor: pointer;
             background-color: v.$azul;
             color: v.$blanco;
+        }
+
+        &--deshabilitada {
+            @extend .horas__hora;
+            border: 1px solid v.$gris;
+            color: v.$gris;
+            opacity: 0.5;
+            &:hover {
+                background-color: v.$gris;
+                cursor: not-allowed;
+            }
         }
     }
 }
