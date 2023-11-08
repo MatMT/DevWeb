@@ -1015,4 +1015,25 @@ h3 {
     display: block;
   }
 }
+
+.listado-ponentes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+.listado-ponentes__ponente {
+  color: #007df4;
+  border: 1px solid #007df4;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.listado-ponentes__ponente:hover, .listado-ponentes__ponente--selected {
+  color: #ffffff;
+  background-color: #007df4;
+  cursor: pointer;
+}
 /*# sourceMappingURL=app.css.map */
