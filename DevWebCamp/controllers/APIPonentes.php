@@ -10,19 +10,19 @@ class APIPonentes
     {
         $ponente = Ponente::all();
         echo json_encode($ponente);
+    }
 
-        // $dia_id = $_GET['dia_id'] ?? '';
-        // $categoria_id = $_GET['categoria_id'] ?? '';
+    public static function ponente()
+    {
+        $id = $_GET['id'];
+        $id = filter_var($id, FILTER_VALIDATE_INT);
 
-        // $dia_id = filter_var($dia_id, FILTER_VALIDATE_INT);
-        // $categoria_id = filter_var($categoria_id, FILTER_VALIDATE_INT);
+        if (!$id || $id < 0) {
+            echo json_encode([]);
+            return;
+        }
 
-        // if (!$dia_id || !$categoria_id) {
-        //     echo json_encode([]);
-        //     return;
-        // }
-
-        // // Consultar la base de datos
-        // $eventos = EventoHorario::whereArray(['dia_id' => $dia_id, 'categoria_id' => $categoria_id]) ?? [];
+        $ponente = Ponente::find($id);
+        echo json_encode($ponente, JSON_UNESCAPED_SLASHES);
     }
 }

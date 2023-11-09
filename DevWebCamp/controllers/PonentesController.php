@@ -11,6 +11,10 @@ class PonentesController
 {
     public static function index(Router $router)
     {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
+
         // PAGINACIÓN =================================
         $pagina_actual = $_GET['page'];
         $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
@@ -29,11 +33,6 @@ class PonentesController
         }
 
         // PAGINACIÓN =================================
-
-        if (!is_admin()) {
-            header('Location: /login');
-        }
-
         $ponentes = Ponente::paginar($registros_por_pagina, $paginacion->offset());
 
         $router->render('admin/ponentes/index', [
@@ -53,10 +52,6 @@ class PonentesController
         $ponente = new Ponente;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (!is_admin()) {
-                header('Location: /login');
-            }
-
             // Leer imagen
             if (!empty($_FILES['imagen']['tmp_name'])) {
                 $dir_images = '../public/img/speakers';
@@ -198,12 +193,11 @@ class PonentesController
 
     public static function eliminar()
     {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (!is_admin()) {
-                header('Location: /login');
-            }
-
             $id = $_POST['id'];
             $ponente = Ponente::find($id);
 
