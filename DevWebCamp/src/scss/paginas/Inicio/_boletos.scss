@@ -1,0 +1,85 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.boletos {
+    &__grid {
+        @include m.contenedor-sm;
+        @include m.grid(1, 5rem);
+    }
+}
+
+.boleto {
+    width: min(100% - 5rem, 65rem);
+    margin: 0 auto;
+    padding: 6rem;
+    border-radius: 2rem;
+    color: v.$blanco;
+    position: relative;
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        background-color: v.$blanco;
+        width: 5rem;
+        height: 5rem;
+        top: calc(50% - 2.5rem);
+    }
+
+    &::after {
+        clip-path: circle(50% at 25% 50%);
+        left: 0;
+    }
+
+    &::before {
+        clip-path: circle(50% at 75% 50%);
+        right: 0;
+    }
+
+    &--presencial {
+        background-color: hsla(178, 100%, 39%, 1);
+        background-image: radial-gradient(at 11% 14%, hsla(209, 100%, 47%, 1) 0px, transparent 50%),
+            radial-gradient(at 45% 20%, hsla(178, 100%, 39%, 1) 0px, transparent 50%),
+            radial-gradient(at 75% 60%, hsla(209, 100%, 47%, 1) 0px, transparent 50%),
+            radial-gradient(at 15% 66%, hsla(178, 100%, 39%, 1) 0px, transparent 50%),
+            radial-gradient(at 28% 87%, hsla(209, 100%, 47%, 1) 0px, transparent 50%),
+            radial-gradient(at 78% 81%, hsla(178, 100%, 39%, 1) 0px, transparent 50%),
+            radial-gradient(at 91% 13%, hsla(209, 100%, 47%, 1) 0px, transparent 50%);
+    }
+
+    &--virtual {
+        background-color: v.$secundario;
+    }
+
+    &--gratis {
+        background-color: v.$azul;
+    }
+
+    &__logo {
+        @include m.logo;
+        @include m.text-fluid(2rem, 4rem);
+    }
+
+    &__plan {
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin: 3rem 0 0 0;
+    }
+
+    &__precio {
+        margin: 3rem 0 0 0;
+        font-weight: v.$black;
+        font-size: 4rem;
+    }
+
+    &__enlace--contenedor {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__enlace {
+        @include m.boton(v.$azul, v.$blanco);
+        width: auto;
+    }
+}

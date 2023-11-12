@@ -701,6 +701,97 @@ h3 {
   text-align: left;
 }
 
+.boletos__grid {
+  width: min(95%, 60rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.boleto {
+  width: min(100% - 5rem, 65rem);
+  margin: 0 auto;
+  padding: 6rem;
+  border-radius: 2rem;
+  color: #ffffff;
+  position: relative;
+}
+.boleto::before, .boleto::after {
+  position: absolute;
+  content: "";
+  background-color: #ffffff;
+  width: 5rem;
+  height: 5rem;
+  top: calc(50% - 2.5rem);
+}
+.boleto::after {
+  -webkit-clip-path: circle(50% at 25% 50%);
+          clip-path: circle(50% at 25% 50%);
+  left: 0;
+}
+.boleto::before {
+  -webkit-clip-path: circle(50% at 75% 50%);
+          clip-path: circle(50% at 75% 50%);
+  right: 0;
+}
+.boleto--presencial {
+  background-color: hsl(178, 100%, 39%);
+  background-image: radial-gradient(at 11% 14%, hsl(209, 100%, 47%) 0px, transparent 50%), radial-gradient(at 45% 20%, hsl(178, 100%, 39%) 0px, transparent 50%), radial-gradient(at 75% 60%, hsl(209, 100%, 47%) 0px, transparent 50%), radial-gradient(at 15% 66%, hsl(178, 100%, 39%) 0px, transparent 50%), radial-gradient(at 28% 87%, hsl(209, 100%, 47%) 0px, transparent 50%), radial-gradient(at 78% 81%, hsl(178, 100%, 39%) 0px, transparent 50%), radial-gradient(at 91% 13%, hsl(209, 100%, 47%) 0px, transparent 50%);
+}
+.boleto--virtual {
+  background-color: #00c8c2;
+}
+.boleto--gratis {
+  background-color: #007df4;
+}
+.boleto__logo {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
+  white-space: nowrap;
+  font-size: clamp(2rem, -0.8rem + 10vw, 4rem);
+}
+@media (min-width: 1024px) {
+  .boleto__logo {
+    text-align: left;
+    margin: 0;
+  }
+}
+.boleto__plan {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 3rem 0 0 0;
+}
+.boleto__precio {
+  margin: 3rem 0 0 0;
+  font-weight: 900;
+  font-size: 4rem;
+}
+.boleto__enlace--contenedor {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+.boleto__enlace {
+  background-color: #007df4;
+  padding: 1.5rem 4rem;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  width: auto;
+}
+.boleto__enlace:hover {
+  background-color: #0063c1;
+  cursor: pointer;
+}
+
 .formulario {
   display: flex;
   flex-direction: column;
