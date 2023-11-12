@@ -117,29 +117,23 @@
             font-family: "Font Awesome 6 Brands";
         }
 
-        &[href*="https://facebook.com"]::before
-        {
+        &[href*="facebook.com"]::before {
             content: "\f39e";
         }
-        &[href*="https://github.com"]::before
-        {
+        &[href*="github.com"]::before {
             content: "\f09b";
         }
 
-        &[href*="https://tiktok.com"]::before
-        {
+        &[href*="tiktok.com"]::before {
             content: "\e07b";
         }
-        &[href*="https://instagram.com"]::before
-        {
+        &[href*="instagram.com"]::before {
             content: "\f16d";
         }
-        &[href*="https://youtube.com"]::before
-        {
+        &[href*="youtube.com"]::before {
             content: "\f167";
         }
-        &[href*="https://twitter.com"]::before
-        {
+        &[href*="twitter.com"]::before {
             content: "\f099";
         }
     }
