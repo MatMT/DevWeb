@@ -2,28 +2,28 @@
 
 <section class="resumen">
     <div class="resumen__grid">
-        <div class="resumen__bloque">
+        <div class="resumen__bloque" <?php aos_animacion() ?>>
             <p class="resumen__texto resumen__texto--numero">
                 <?php echo $ponentes_total ?>
             </p>
             <p class="resumen__texto">Speakers</p>
         </div>
 
-        <div class="resumen__bloque">
+        <div class="resumen__bloque" <?php aos_animacion() ?>>
             <p class="resumen__texto resumen__texto--numero">
                 <?php echo $conferencias_total ?>
             </p>
             <p class="resumen__texto">Conferencias</p>
         </div>
 
-        <div class="resumen__bloque">
+        <div class="resumen__bloque" <?php aos_animacion() ?>>
             <p class="resumen__texto resumen__texto--numero">
                 <?php echo $workshops_total ?>
             </p>
             <p class="resumen__texto">Workshops</p>
         </div>
 
-        <div class="resumen__bloque">
+        <div class="resumen__bloque" <?php aos_animacion() ?>>
             <p class="resumen__texto resumen__texto--numero">
                 <?php echo $usuarios_total ?>
             </p>
@@ -41,10 +41,9 @@
         Conoce a nuestros expertos de DevWebCamp
     </p>
 
-
     <div class="speakers__grid">
         <?php foreach ($ponentes as $ponente) { ?>
-            <div class="speaker">
+            <div class="speaker" <?php aos_animacion() ?>>
                 <picture>
                     <source srcset="/img/speakers/<?php echo $ponente->imagen; ?>.webp" type="image/webp">
 
@@ -126,19 +125,19 @@
     <p class="boletos__descripcion">Precios para DevWebCamp</p>
 
     <div class="boletos__grid">
-        <div class="boleto boleto--presencial">
+        <div <?php aos_animacion() ?> class="boleto boleto--presencial">
             <h4 class="boleto__logo"> &#60;DevWebCamp /></h4>
             <h4 class="boleto__plan">Presencial</h4>
             <h4 class="boleto__precio">$199</h4>
         </div>
         <!--  -->
-        <div class="boleto boleto--virtual">
+        <div <?php aos_animacion() ?> class="boleto boleto--virtual">
             <h4 class="boleto__logo"> &#60;DevWebCamp /></h4>
             <h4 class="boleto__plan">Virtual</h4>
             <h4 class="boleto__precio">$49</h4>
         </div>
         <!--  -->
-        <div class="boleto boleto--gratis">
+        <div <?php aos_animacion() ?> class="boleto boleto--gratis">
             <h4 class="boleto__logo"> &#60;DevWebCamp /></h4>
             <h4 class="boleto__plan">Gratis</h4>
             <h4 class="boleto__precio">Gratis - $0</h4>

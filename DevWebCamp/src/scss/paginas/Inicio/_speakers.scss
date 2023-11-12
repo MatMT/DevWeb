@@ -51,6 +51,12 @@
         @include m.reset-list;
         @include m.tags;
     }
+
+    &__skill {
+        &:hover {
+            background-color: darken(v.$azul, 10%) !important;
+        }
+    }
 }
 
 .speaker-sociales {

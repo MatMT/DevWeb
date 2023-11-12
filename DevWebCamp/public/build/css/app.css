@@ -652,6 +652,9 @@ h3 {
   cursor: pointer;
   background-color: #dc0000;
 }
+.speaker__skill:hover {
+  background-color: #0063c1 !important;
+}
 
 .speaker-sociales {
   display: flex;

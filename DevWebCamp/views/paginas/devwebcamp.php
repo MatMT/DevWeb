@@ -7,7 +7,7 @@
         Conoce la conferencia más importante de Latinoamérica
     </p>
 
-    <div class="devwebcamp__grid">
+    <div class="devwebcamp__grid" <?php aos_animacion() ?>>
         <div class="devwebcamp__imagen">
             <picture>
                 <source srcset="build/img/sobre_devwebcamp.avif" type="image/avif">
