@@ -118,3 +118,34 @@
         <?php } ?>
     </div>
 </section>
+
+<div class="mapa" id="leafletmap"></div>
+
+<section class="boletos">
+    <h2 class="boletos__heading">Boletos & Precios</h2>
+    <p class="boletos__descripcion">Precios para DevWebCamp</p>
+
+    <div class="boletos__grid">
+        <div class="boleto boleto--presencial">
+            <h4 class="boleto__logo"> &#60;DevWebCamp /></h4>
+            <h4 class="boleto__plan">Presencial</h4>
+            <h4 class="boleto__precio">$199</h4>
+        </div>
+        <!--  -->
+        <div class="boleto boleto--virtual">
+            <h4 class="boleto__logo"> &#60;DevWebCamp /></h4>
+            <h4 class="boleto__plan">Virtual</h4>
+            <h4 class="boleto__precio">$49</h4>
+        </div>
+        <!--  -->
+        <div class="boleto boleto--gratis">
+            <h4 class="boleto__logo"> &#60;DevWebCamp /></h4>
+            <h4 class="boleto__plan">Gratis</h4>
+            <h4 class="boleto__precio">Gratis - $0</h4>
+        </div>
+    </div>
+
+    <div class="boleto__enlace--contenedor">
+        <a href="/paquetes" class="boleto__enl">Ver Paquetes</a>
+    </div>
+</section>
