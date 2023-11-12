@@ -795,6 +795,13 @@ h3 {
   cursor: pointer;
 }
 
+.page404__contenedor {
+  text-align: center;
+}
+.page404__enlace {
+  color: #007df4;
+}
+
 .formulario {
   display: flex;
   flex-direction: column;

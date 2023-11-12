@@ -65,7 +65,6 @@ class PaginasController
 
     public static function evento(Router $router)
     {
-
         $router->render('paginas/devwebcamp', [
             'titulo' => 'Sobre DevWebCamp'
         ]);
@@ -112,6 +111,14 @@ class PaginasController
         $router->render('paginas/conferencias', [
             'titulo' => 'Conferencias & WorkShops',
             'eventos' => $eventos_formateados
+        ]);
+    }
+
+    public static function Page404(Router $router)
+    {
+
+        $router->render('paginas/page404', [
+            'titulo' => 'Página no encontrada'
         ]);
     }
 }
