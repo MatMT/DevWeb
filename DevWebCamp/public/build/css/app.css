@@ -704,7 +704,7 @@ h3 {
     justify-content: flex-end;
   }
 }
-.header__enlace {
+.header__enlace, .header__submit {
   color: #ffffff;
   font-size: 1.4rem;
   text-transform: uppercase;
@@ -712,9 +712,12 @@ h3 {
   background-color: transparent;
   border: none;
 }
-.header__enlace:hover {
+.header__enlace:hover, .header__submit:hover {
   color: #007df4;
   cursor: pointer;
+}
+.header__form {
+  display: flex;
 }
 .header__contenido {
   padding-top: 10rem;
@@ -799,6 +802,7 @@ h3 {
   color: #ffffff;
   text-align: center;
   margin-bottom: 2rem;
+  white-space: nowrap;
 }
 @media (min-width: 1024px) {
   .barra__logo {
@@ -818,13 +822,13 @@ h3 {
 }
 .navegacion__enlace {
   color: #ffffff;
-  font-size: 2.2rem;
+  font-size: 2rem;
   padding: 2rem;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
 }
-.navegacion__enlace:hover {
+.navegacion__enlace--actual, .navegacion__enlace:hover {
   color: #007df4;
   background-color: #ffffff;
 }
@@ -850,6 +854,7 @@ h3 {
   color: #ffffff;
   text-align: center;
   margin-bottom: 2rem;
+  white-space: nowrap;
   font-size: clamp(2rem, -0.8rem + 10vw, 4rem);
 }
 @media (min-width: 1024px) {
@@ -964,6 +969,7 @@ h3 {
   color: #ffffff;
   text-align: center;
   margin-bottom: 2rem;
+  white-space: nowrap;
   font-size: clamp(2rem, -0.8rem + 10vw, 3rem);
 }
 @media (min-width: 1024px) {
