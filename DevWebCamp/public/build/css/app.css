@@ -360,12 +360,164 @@ h3 {
   text-align: center;
 }
 
+[class$=__descripcion] {
+  text-align: center;
+  font-size: 1.8rem;
+  font-size: 300;
+  color: #1e293b;
+  margin-bottom: 5rem;
+}
+
 .auth {
   width: min(95%, 60rem);
   margin: 0 auto;
 }
 .auth__texto {
   font-size: 2rem;
+}
+
+.devwebcamp__grid {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .devwebcamp__grid {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+.devwebcamp__texto {
+  line-height: 1.8;
+}
+
+.paquetes__grid {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .paquetes__grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+  }
+}
+
+.paquete {
+  border: 1px solid #7f8ea3;
+  padding: 3rem;
+}
+.paquete__nombre {
+  font-weight: 900;
+  font-size: 2.6rem;
+  margin: 2rem 0;
+}
+.paquete:nth-child(2) {
+  order: -1;
+}
+@media (min-width: 768px) {
+  .paquete:nth-child(2) {
+    order: unset;
+  }
+}
+.paquete__lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.8;
+}
+.paquete__precio {
+  font-size: 5rem;
+  margin: 3rem 0 0 0;
+  color: #007df4;
+  font-weight: 900;
+  text-align: center;
+}
+
+.agenda {
+  padding: 5rem 0;
+  width: min(95%, 140rem);
+  margin: 0 auto;
+}
+
+.eventos__heading {
+  color: #007df4;
+  margin: 5rem 8;
+  text-align: left;
+  font-size: clamp(3rem, -0.8rem + 8vw, 6rem);
+}
+.eventos__fecha {
+  color: #64748b;
+  margin: 3rem 0 1rem 0;
+}
+.eventos--workshops .eventos__heading {
+  color: #00c8c2;
+}
+.eventos--workshops .evento__informacion {
+  background-color: #00c8c2;
+}
+.eventos--workshops .evento__informacion:hover {
+  background-color: #009591;
+}
+.eventos .swiper-button-next,
+.eventos .swiper-button-prev {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.evento__hora {
+  font-weight: 700;
+}
+.evento__informacion {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #007df4;
+  color: #ffffff;
+  transition: 300ms background-color ease;
+}
+.evento__informacion:hover {
+  background-color: #0063c1;
+}
+.evento__nombre {
+  font-size: 2rem;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.evento__introduccion {
+  font-size: 1.6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .evento__introduccion {
+    -webkit-line-clamp: 2;
+  }
+}
+.evento__autor-info {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.evento__imagen-autor {
+  width: 6rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+.evento__autor-nombre {
+  font-weight: 700;
 }
 
 .formulario {
