@@ -82,4 +82,76 @@
         @include m.boton(v.$azul, v.$blanco);
         width: auto;
     }
+
+    $modificador: &;
+
+    &--acceso {
+        width: 30rem;
+        height: 50rem;
+        padding: 10rem 3rem;
+
+        @include m.tablet {
+            width: 60rem;
+            height: 30rem;
+            padding: 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #{$modificador}__logo {
+            @include m.text-fluid(2rem, 3rem);
+            margin: 0;
+            text-align: left;
+        }
+
+        #{$modificador}__nombre {
+            font-size: 2.4rem;
+            text-transform: uppercase;
+            font-weight: v.$black;
+        }
+
+        #{$modificador}__codigo {
+            font-size: 4rem;
+            font-weight: v.$bold;
+            text-align: center;
+            position: absolute;
+            bottom: 7rem;
+            margin: 0;
+            left: 0;
+            width: 100%;
+
+            @include m.tablet {
+                rotate: 90deg;
+                transform-origin: 0 0;
+                width: 30rem;
+                top: 0;
+                left: calc(100% - 7rem);
+            }
+        }
+
+        &::before {
+            clip-path: circle(50% at 50% 25%);
+            left: calc(50% - 2.5rem);
+            top: 0;
+
+            @include m.tablet {
+                clip-path: circle(50% at 25% 50%);
+                left: 0;
+                top: calc(50% - 2.5rem);
+            }
+        }
+
+        &::after {
+            clip-path: circle(50% at 50% 75%);
+            left: calc(50% - 2.5rem);
+            top: calc(100% - 5rem);
+
+            @include m.tablet {
+                clip-path: circle(50% at 75% 50%);
+                left: calc(100% - 5rem);
+                top: calc(50% - 2.5rem);
+            }
+        }
+    }
 }

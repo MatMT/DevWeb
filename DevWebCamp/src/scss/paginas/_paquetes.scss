@@ -11,6 +11,11 @@
             align-items: flex-start;
         }
     }
+
+    &__submit {
+        margin-top: 3rem;
+        @include m.boton(v.$azul, v.$blanco);
+    }
 }
 
 .paquete {
@@ -30,7 +35,7 @@
 
     &__precio {
         font-size: 5rem;
-        margin: 3rem 0 0 0;
+        margin: 3rem 0;
         color: v.$azul;
         font-weight: v.$black;
         text-align: center;
