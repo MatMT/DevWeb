@@ -2,10 +2,15 @@
 
 namespace Controllers;
 
-use Model\Paquete;
+use Model\Dia;
+use Model\Hora;
 use MVC\Router;
-use Model\RegistroPaquetes;
+use Model\Evento;
+use Model\Paquete;
+use Model\Ponente;
 use Model\Usuario;
+use Model\Categoria;
+use Model\RegistroPaquetes;
 
 class RegistroController
 {
@@ -114,8 +119,50 @@ class RegistroController
 
     public static function conferencias(Router $router)
     {
+        if (!is_auth()) {
+            header('Location: /login');
+        }
+
+        // Validar que el usuario tenga el plan presencial
+        $usuario_id = $_SESSION['id'];
+        $registro = RegistroPaquetes::where('usuario_id', $usuario_id);
+
+        if ($registro->paquete_id !== "1") {
+            header('Location: /');
+        }
+
+        // Obtener según categoría
+        $eventos = Evento::ordenar('hora_id', 'ASC');
+        $eventos_formateados = [];
+
+        foreach ($eventos as $evento) {
+            // Relacionar Id's con modelos
+            $evento->categoria = Categoria::find($evento->categoria_id);
+            $evento->dia = Dia::find($evento->dia_id);
+            $evento->hora = Hora::find($evento->hora_id);
+            $evento->ponente = Ponente::find($evento->ponente_id);
+
+            if ($evento->dia_id === "1" && $evento->categoria_id === "1") {
+                $eventos_formateados['conferencias_s'][] = $evento;
+            }
+
+            if ($evento->dia_id === "2" && $evento->categoria_id === "1") {
+                $eventos_formateados['conferencias_d'][] = $evento;
+            }
+
+            if ($evento->dia_id === "1" && $evento->categoria_id === "2") {
+                $eventos_formateados['workshops_s'][] = $evento;
+            }
+
+            if ($evento->dia_id === "2" && $evento->categoria_id === "2") {
+                $eventos_formateados['workshops_d'][] = $evento;
+            }
+        }
+
+
         $router->render('registro/conferencias', [
             'titulo' => 'Elige Workshops y Conferencias',
+            'eventos' => $eventos_formateados
         ]);
     }
 }
