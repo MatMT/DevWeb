@@ -42,5 +42,24 @@
             <h2 class="registro__heading">Tu Regitro</h2>
 
             <div class="registro__resumen" id="registro-resumen"></div>
+
+            <div class="registro__regalo">
+                <label for="regalo" class="registro__label">Selecciona un regalo</label>
+
+                <select id="regalo" class="registro__select">
+                    <option value="">-- Selecciona tu regalo --</option>
+                    <?php foreach ($regalos as $regalo) { ?>
+                        <option value="<?php echo $regalo->id; ?>">
+                            <?php echo $regalo->nombre; ?>
+                        </option>
+                    <?php } ?>
+                </select>
+
+                <form action="" class="formulario" id="registro">
+                    <div class="formulario__campo">
+                        <input type="submit" value="Registrarme" class="formulario__submit formulario__submit--full">
+                    </div>
+                </form>
+            </div>
         </aside>
     </div>

@@ -8,6 +8,7 @@ use MVC\Router;
 use Model\Evento;
 use Model\Ponente;
 use Model\Categoria;
+use Model\Regalo;
 use Model\Usuario;
 
 class PaginasController
@@ -108,9 +109,10 @@ class PaginasController
             }
         }
 
+
         $router->render('paginas/conferencias', [
             'titulo' => 'Conferencias & WorkShops',
-            'eventos' => $eventos_formateados
+            'eventos' => $eventos_formateados,
         ]);
     }
 

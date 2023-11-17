@@ -5,7 +5,7 @@ namespace Model;
 class RegistroPaquetes extends ActiveRecord
 {
     protected static $tabla = 'registros';
-    protected static $columnasDB = ['id', 'paquete_id', 'pago_id', 'token', 'usuario_id'];
+    protected static $columnasDB = ['id', 'paquete_id', 'pago_id', 'token', 'usuario_id', 'regalo_id'];
 
     public function __construct($args = [])
     {
@@ -14,5 +14,6 @@ class RegistroPaquetes extends ActiveRecord
         $this->pago_id = $args['pago_id'] ?? '';
         $this->token = $args['token'] ?? '';
         $this->usuario_id = $args['usuario_id'] ?? '';
+        $this->regalo_id = $args['regalo_id'] ?? '';
     }
 }
