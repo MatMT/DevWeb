@@ -1,6 +1,6 @@
 <main class="pagina">
     <h4 class="pagina__heading"><?php echo $titulo; ?></h4>
-    <p class="pagina__descripcion">Tu Boleto - Te recomendamos almacenarlo, puedes compartirlo en redes sociales.</p>
+    <p class="pagina__descripcion">Tu Boleto - Te recomendamos almacenarlo, evita compartir el token en redes sociales.</p>
 
     <div class="boleto-virtual">
         <div class="boleto boleto--<?php echo strtolower($registro->paquete->nombre); ?> boleto--acceso">

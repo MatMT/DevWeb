@@ -14,6 +14,8 @@ import Swal from "sweetalert2";
         const formularioRegistro = document.querySelector('#registro');
         formularioRegistro.addEventListener('submit', submitForm);
 
+        mostrarEventos();
+
         function seleccionarEvento({ target }) {
             if (eventos.length < 5) {
                 // Deshabilitar el evento
@@ -61,6 +63,13 @@ import Swal from "sweetalert2";
                     eventoDOM.appendChild(botonEliminar);
                     resumen.appendChild(eventoDOM);
                 })
+            } else {
+                const noRegistro = document.createElement('P');
+                noRegistro.textContent = 'No hay eventos, selecciona hasta 5 posibles eventos';
+                noRegistro.classList.add('registro__texto');
+
+                // Renderizar en DOM
+                resumen.appendChild(noRegistro);
             }
         }
 
@@ -79,7 +88,8 @@ import Swal from "sweetalert2";
             }
         }
 
-        function submitForm(e) {
+        // Función asíncronica =====
+        async function submitForm(e) {
             e.preventDefault();
 
             // Obtener el regalo
@@ -98,7 +108,33 @@ import Swal from "sweetalert2";
                 return;
             }
 
-            console.log('Registrando');
+            // Objeto de Formdata
+            const datos = new FormData();
+            datos.append('eventos', eventosId);
+            datos.append('regalo_id', regaloId);
+
+            const url = '/finalizar-registro/conferencias';
+            const respuesta = await fetch(url, {
+                method: 'POST',
+                body: datos
+            });
+            const resultado = await respuesta.json();
+
+            if (resultado.resultado) {
+                Swal.fire(
+                    'Registro Exitoso',
+                    'Tus selecciones se han almacenado, te esperamos en DevWebCamp',
+                    'success'
+                ).then(() => location.href = `/boleto?id=${resultado.token}`)
+            } else {
+                Swal.fire({
+                    'title': 'Error',
+                    'text': 'Hubo un Error',
+                    'icon': 'error',
+                    'confirmButtonText': 'Ok'
+                }).then(() => location.reload());
+            }
+
         }
     }
 })()

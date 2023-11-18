@@ -1676,6 +1676,9 @@ h3 {
 .registro__eliminar:hover {
   cursor: pointer;
 }
+.registro__texto {
+  text-align: center;
+}
 .registro__regalo {
   margin-top: 3rem;
 }
