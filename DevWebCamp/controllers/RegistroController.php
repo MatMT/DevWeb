@@ -19,19 +19,22 @@ class RegistroController
 
     public static function index(Router $router)
     {
-
         if (!is_auth()) {
             header('Location: /');
+            return;
         }
 
         // Verificar si el usuario ya esta registrado
         $registro = RegistroPaquetes::where('usuario_id', $_SESSION['id']);
-        if (isset($registro) && $registro->paquete_id === "3") {
+
+        if (isset($registro) && ($registro->paquete_id === "3" || $registro->paquete_id === "2")) {
             header('Location: /boleto?id=' . urlencode($registro->token));
+            return;
         }
 
-        if ($registro->paquete_id === "1") {
+        if (isset($registro) && $registro->paquete_id === "1") {
             header('Location: /finalizar-registro/conferencias');
+            return;
         }
 
         $router->render('registro/crear', [
@@ -43,6 +46,7 @@ class RegistroController
     {
         if (!is_auth()) {
             header('Location: /login');
+            return;
         }
 
         $token = substr(md5(uniqid(rand(), true)), 0, 8);
@@ -51,6 +55,7 @@ class RegistroController
         $registro = RegistroPaquetes::where('usuario_id', $_SESSION['id']);
         if (isset($registro) && $registro->paquete_id === "3") {
             header('Location: /boleto?id=' . urlencode($registro->token));
+            return;
         }
 
         //Crear registro
@@ -66,6 +71,7 @@ class RegistroController
 
         if ($resultado) {
             header('Location: /boleto?id=' . urlencode($registro->token));
+            return;
         }
     }
 
@@ -73,6 +79,7 @@ class RegistroController
     {
         if (!is_auth()) {
             header('Location: /login');
+            return;
         }
 
         // Validar que POST no venga vacío
@@ -89,6 +96,8 @@ class RegistroController
         try {
             $registro = new RegistroPaquetes($datos);
             $resultado = $registro->guardar();
+
+
             echo json_encode($resultado);
         } catch (\Throwable $th) {
             echo json_encode([
@@ -102,9 +111,9 @@ class RegistroController
         // Variable de la URL
         $id = $_GET['id'];
 
-
         if (!$id || !strlen($id) === 8) {
             header('Location: /');
+            return;
         }
 
         // Buscar en la DB
@@ -112,6 +121,7 @@ class RegistroController
 
         if (!$registro) {
             header('Location: /');
+            return;
         }
 
         $registro->usuario = Usuario::find($registro->usuario_id);
@@ -127,19 +137,31 @@ class RegistroController
     {
         if (!is_auth()) {
             header('Location: /login');
+            return;
         }
 
         // Validar que el usuario tenga el plan presencial
         $usuario_id = $_SESSION['id'];
         $registro = RegistroPaquetes::where('usuario_id', $usuario_id);
 
-        if ($registro->paquete_id !== "1") {
-            header('Location: /');
+        // Aqui validas si el registro se ha completado o no
+        $registroFinalizado = EventoRegistro::where('registro_id', $registro->id);
+
+        if (isset($registro) && $registro->paquete_id === "2") {
+            header('Location: /boleto?id=' . urlencode($registro->token));
+            return;
         }
 
-        // Redireccionar a boleto virtual en caso de haber finalizado su registro
-        if (isset($registro->regalo_id)) {
+        // Aqui validas si el registro se ha completado o no
+        if (isset($registroFinalizado)) {
             header('Location: /boleto?id=' . urlencode($registro->token));
+            return;
+        }
+
+
+        if ($registro->paquete_id !== "1") {
+            header('Location: /');
+            return;
         }
 
         // Obtener según categoría
@@ -184,6 +206,7 @@ class RegistroController
         // Revisar que el usuario  este autenticado
         if (!is_auth()) {
             header('Location: /login');
+            return;
         }
 
         // Separar elementos del array

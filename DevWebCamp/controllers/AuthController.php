@@ -14,7 +14,6 @@ class AuthController
         $alertas = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             $usuario = new Usuario($_POST);
 
             $alertas = $usuario->validarLogin();
@@ -69,6 +68,11 @@ class AuthController
 
     public static function registro(Router $router)
     {
+        if (is_auth()) {
+            header('Location: /finalizar-registro/conferencias');
+            return;
+        }
+
         $alertas = [];
         $usuario = new Usuario;
 

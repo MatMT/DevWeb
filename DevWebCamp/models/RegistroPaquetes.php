@@ -14,6 +14,6 @@ class RegistroPaquetes extends ActiveRecord
         $this->pago_id = $args['pago_id'] ?? '';
         $this->token = $args['token'] ?? '';
         $this->usuario_id = $args['usuario_id'] ?? '';
-        $this->regalo_id = $args['regalo_id'] ?? '';
+        $this->regalo_id = $args['regalo_id'] ?? 1;
     }
 }
