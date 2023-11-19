@@ -1480,6 +1480,10 @@ h3 {
   margin: 0 auto;
   border-radius: 0.5rem;
 }
+.dashboard__graphic {
+  width: min(95%, 60rem);
+  margin: 0 auto;
+}
 
 .table {
   width: 100%;

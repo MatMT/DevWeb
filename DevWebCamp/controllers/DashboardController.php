@@ -22,6 +22,7 @@ class DashboardController
         // Calcular los ingresos
         $virtuales = RegistroPaquetes::total('paquete_id', 2);
         $presenciales = RegistroPaquetes::total('paquete_id', 1);
+
         // Multiplicacion y suma restando ya comisiones
         $ingresos = ($virtuales * 46.05) + ($presenciales * 187.95);
 

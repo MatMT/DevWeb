@@ -127,4 +127,8 @@
         @include m.contenedor-md;
         border-radius: 0.5rem;
     }
+
+    &__graphic {
+        @include m.contenedor-sm;
+    }
 }
